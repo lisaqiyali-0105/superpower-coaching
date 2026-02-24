@@ -137,23 +137,32 @@
       display: block;
     }
     .hero-roles {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0;
-      margin: 24px 0 0;
-      border: 1px solid var(--border);
-      width: fit-content;
+      margin: 28px 0 0;
     }
-    .hero-role {
-      font-size: 0.78rem;
-      letter-spacing: 0.09em;
+    .hero-role-item {
+      font-family: var(--ff-display);
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.65;
+      padding-left: 22px;
+      position: relative;
+    }
+    .hero-role-item::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--kraft);
+      font-style: normal;
+    }
+    .hero-roles-close {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--pencil);
-      padding: 10px 18px;
-      border-right: 1px solid var(--border);
-      white-space: nowrap;
+      color: var(--fade);
+      margin-top: 14px;
+      padding-left: 22px;
     }
-    .hero-role:last-child { border-right: none; }
     .hero-sub {
       font-size: 1.05rem;
       color: var(--pencil);
@@ -692,9 +701,6 @@
 
       /* Stats strip */
       .stats-strip { grid-template-columns: repeat(2, 1fr); }
-      .hero-roles { flex-direction: column; width: 100%; }
-      .hero-role { border-right: none; border-bottom: 1px solid var(--border); }
-      .hero-role:last-child { border-bottom: none; }
       .stat-item { padding: 32px 16px; }
       .stat-n { font-size: 2.2rem; }
 
@@ -781,11 +787,11 @@
       <svg class="hero-underline" width="340" height="14" viewBox="0 0 340 14" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M2 10 C 40 4, 80 13, 120 7 S 180 3, 220 9 S 280 13, 338 6" stroke="#C4A77D" stroke-width="2.5" stroke-linecap="round" fill="none"/>
       </svg>
-      <p class="hero-sub">Since 2020, Lisa has helped 30+ candidates gain admission to HBS, Stanford GSB, Wharton, and beyond.</p>
-      <div class="hero-roles" role="list">
-        <span class="hero-role" role="listitem">Career Strategist</span>
-        <span class="hero-role" role="listitem">Storytelling Coach</span>
-        <span class="hero-role" role="listitem">Lifelong Mentor</span>
+      <div class="hero-roles">
+        <div class="hero-role-item">Career Strategist</div>
+        <div class="hero-role-item">Storytelling Coach</div>
+        <div class="hero-role-item">Lifelong Mentor</div>
+        <p class="hero-roles-close">Three in one.</p>
       </div>
     </div>
     <div class="hero-photo-wrap">
