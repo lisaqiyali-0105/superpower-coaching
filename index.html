@@ -290,6 +290,12 @@
       padding: 28px 24px;
       position: relative;
     }
+    .diff-icon {
+      width: 36px;
+      height: 36px;
+      margin-bottom: 16px;
+      color: var(--kraft);
+    }
     .diff-card:nth-child(odd) { transform: rotate(-0.4deg); }
     .diff-card:nth-child(even) { transform: rotate(0.3deg); }
     .diff-card:nth-child(3n) { transform: rotate(-0.6deg); }
@@ -770,10 +776,10 @@
   <nav class="nav" aria-label="Main navigation">
     <a href="#" class="nav-logo">Superpower Coaching</a>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#process">Process</a></li>
+      <li><a href="#about-letter">About</a></li>
+      <li><a href="#roadmap">Process</a></li>
       <li><a href="#packages">Packages</a></li>
-      <li><a href="#team">Team</a></li>
+      <li><a href="#testimonials">Results</a></li>
     </ul>
   </nav>
 
@@ -862,43 +868,50 @@
     <div class="diff-grid">
 
       <div class="diff-card">
-        <div class="diff-number">1</div>
+        <!-- Superpower: lightning bolt / spark -->
+        <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
         <h3>The Superpower Exercise</h3>
         <p>Our signature methodology. We don't start with essays — we start with excavation. You'll uncover the through-line that connects everything you've done, and build your entire application around it. This framework doesn't just get you into an MBA program. It's the foundation for how you tell your story for the rest of your career.</p>
       </div>
 
       <div class="diff-card">
-        <div class="diff-number">2</div>
+        <!-- Mentor: person with speech bubble -->
+        <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 2H4a2 2 0 00-2 2v12a2 2 0 002 2h4l4 4 4-4h4a2 2 0 002-2V4a2 2 0 00-2-2z"/><path d="M8 10h8M8 6h5"/></svg>
         <h3>Mentor, Not Task Manager</h3>
         <p>Lisa doesn't just edit your essays. She gets into your head. She'll challenge your assumptions, push you toward insights you didn't know you had, and nudge you in the right direction — even when that direction is uncomfortable. High-touch, high-impact mentorship from someone who's been through it.</p>
       </div>
 
       <div class="diff-card">
-        <div class="diff-number">3</div>
+        <!-- Refuse to write: pen with X / feather pen -->
+        <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
         <h3>We Refuse to Write Your Essays</h3>
         <p>Other consultants offer polished drafts. We don't. Every word has to come from you — because shortcuts produce essays that sound like someone else. When you walk into an interview, you need to own your story completely. We help you find it, shape it, and tell it in your own voice.</p>
       </div>
 
       <div class="diff-card">
-        <div class="diff-number">4</div>
+        <!-- Scholarships: award / medal -->
+        <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
         <h3>Scholarships, Not Just Admits</h3>
         <p>Getting in is one thing. Paying for it is another. Over 80% of our students received merit scholarships — because we help you understand your leverage and negotiate strategically. An admit without scholarship money is a half-win. We play for the full win.</p>
       </div>
 
       <div class="diff-card">
-        <div class="diff-number">5</div>
+        <!-- Network: connected nodes -->
+        <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51L8.59 10.49"/></svg>
         <h3>You Join the Network for Life</h3>
         <p>This isn't a transaction. Once you're a Superpower Coaching client, you're connected to a growing community of ambitious professionals across HBS, GSB, Wharton, and beyond. Lisa actively connects clients with each other for career advice, deal flow, and support — and the relationship is reciprocal, not one-directional.</p>
       </div>
 
       <div class="diff-card">
-        <div class="diff-number">6</div>
+        <!-- Selective: filter / diamond -->
+        <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 3h19l-7 9.5V20l-5-2.5v-5L2.5 3z"/></svg>
         <h3>Selective by Design</h3>
         <p>We work with approximately 10 students per year. Not because we can't scale — but because we won't. Mutual fit is required. We turn down clients who aren't the right match, and we expect clients to choose us for the right reasons too. No revenue pressure means no compromises.</p>
       </div>
 
       <div class="diff-card">
-        <div class="diff-number">7</div>
+        <!-- Team: people group -->
+        <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
         <h3>The Team Behind You</h3>
         <p>Lisa is supported by a team of HBS and M7 graduates with deep expertise across industries and MBA programs. Their network becomes yours. When you need a connection, a reference, or an insider perspective on a program, we make the introduction.</p>
       </div>
