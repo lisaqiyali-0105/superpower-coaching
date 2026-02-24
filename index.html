@@ -186,12 +186,12 @@
     .about { background: white; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
     .about-inner {
       display: grid;
-      grid-template-columns: 1fr 240px;
-      gap: 64px;
+      grid-template-columns: 280px 1fr;
+      gap: 80px;
       align-items: start;
       margin-top: 32px;
     }
-    .about h2 { margin-bottom: 28px; }
+    .about h2 { margin-bottom: 0; }
     .founder-letter { max-width: 580px; }
     .founder-letter p {
       font-size: 1rem;
@@ -717,8 +717,7 @@
       .hero-photo, .hero-photo-placeholder { width: 220px; height: 220px; }
 
       /* About */
-      .about-inner { grid-template-columns: 1fr; gap: 32px; }
-      .about-photo-wrap { display: none; }
+      .about-inner { grid-template-columns: 1fr; gap: 24px; }
 
       /* Who */
       .pledge-cards { grid-template-columns: 1fr; }
@@ -806,24 +805,15 @@
   <div class="container">
     <p class="section-label">From the Founder</p>
     <div class="about-inner">
-      <div class="about-text">
+      <div class="about-heading">
         <h2>A Note from Lisa</h2>
-        <div class="founder-letter">
-          <p>I started Superpower Coaching because I kept seeing the same thing: brilliant people talking themselves out of applying to top programs, convinced they weren't "the right type."</p>
-          <p>The truth? The schools that matter aren't looking for perfect profiles. They're looking for people who know exactly who they are — and can articulate why an MBA is the next chapter in a story that only they could tell.</p>
-          <p>That's where the Superpower Exercise comes in. It's not a writing prompt. It's a process of excavation. We help you find the thread that runs through everything you've done — and build your entire application around it.</p>
-          <p>I work with a small, selective cohort each year. No volume. No templates. No ghostwriting. Just real mentorship from someone who's been through this, believes in you, and will push you until your application is undeniably, authentically yours.</p>
-          <p class="letter-sig">— Lisa Qiya Li, HBS '23 · Founder, Superpower Coaching</p>
-        </div>
       </div>
-      <div class="about-photo-wrap">
-        <img
-          src="lisa-headshot.jpeg"
-          alt="Lisa Qiya Li"
-          class="about-photo"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-        />
-        <div class="hero-photo-placeholder" style="display:none; width:200px; height:200px;">Lisa</div>
+      <div class="founder-letter">
+        <p>I started Superpower Coaching because I kept seeing the same thing: brilliant people talking themselves out of applying to top programs, convinced they weren't "the right type."</p>
+        <p>The truth? The schools that matter aren't looking for perfect profiles. They're looking for people who know exactly who they are — and can articulate why an MBA is the next chapter in a story that only they could tell.</p>
+        <p>That's where the Superpower Exercise comes in. It's not a writing prompt. It's a process of excavation. We help you find the thread that runs through everything you've done — and build your entire application around it.</p>
+        <p>I work with a small, selective cohort each year. No volume. No templates. No ghostwriting. Just real mentorship from someone who's been through this, believes in you, and will push you until your application is undeniably, authentically yours.</p>
+        <p class="letter-sig">— Lisa Qiya Li · Harvard Business School Graduate · Founder, Superpower Coaching</p>
       </div>
     </div>
   </div>
