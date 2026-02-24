@@ -397,6 +397,161 @@
       line-height: 1.7;
       color: var(--pencil);
     }
+
+    /* === TRACK RECORD === */
+    .track-record { }
+    .track-record h2 { margin-bottom: 12px; }
+    .track-intro {
+      font-size: 1rem;
+      color: var(--pencil);
+      max-width: 580px;
+      margin-bottom: 48px;
+      line-height: 1.7;
+    }
+    .track-table { display: flex; flex-direction: column; gap: 0; }
+    .track-year-block {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 24px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+    .track-year-block:first-child { border-top: 1px solid var(--border); }
+    .track-year {
+      font-family: var(--ff-display);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--fade);
+      padding-top: 4px;
+    }
+    .track-admits { display: flex; flex-wrap: wrap; gap: 8px; }
+    .admit-tag {
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      padding: 4px 10px;
+      border: 1px solid var(--border);
+      color: var(--pencil);
+      background: white;
+    }
+    .admit-tag--scholarship {
+      border-color: var(--kraft);
+      color: var(--ink);
+      font-weight: 500;
+    }
+    .track-footnote {
+      font-size: 0.72rem;
+      color: var(--fade);
+      margin-top: 20px;
+      letter-spacing: 0.03em;
+    }
+
+    /* === PACKAGES === */
+    .packages { background: white; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .packages h2 { margin-bottom: 48px; }
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 20px;
+    }
+    .pkg-card {
+      border: 1.5px solid var(--border);
+      padding: 36px 28px;
+      position: relative;
+      background: var(--paper);
+    }
+    .pkg-card:nth-child(1) { transform: rotate(-0.3deg); }
+    .pkg-card:nth-child(2) { transform: rotate(0.2deg); }
+    .pkg-card:nth-child(3) { transform: rotate(-0.4deg); }
+    .pkg-card--featured {
+      border-color: var(--ink);
+      border-width: 2px;
+      background: white;
+    }
+    .pkg-badge {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: white;
+      background: var(--ink);
+      padding: 3px 8px;
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+    .pkg-name {
+      font-family: var(--ff-display);
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .pkg-price {
+      font-family: var(--ff-display);
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .pkg-scope {
+      font-size: 0.8rem;
+      color: var(--fade);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .pkg-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .pkg-features li {
+      font-size: 0.88rem;
+      color: var(--pencil);
+      padding-left: 16px;
+      position: relative;
+      line-height: 1.5;
+    }
+    .pkg-features li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--kraft);
+    }
+    .pkg-footnote {
+      font-size: 0.78rem;
+      color: var(--fade);
+      margin-bottom: 48px;
+    }
+    .roi-block {
+      border: 1.5px solid var(--border);
+      padding: 36px 40px;
+      background: var(--paper);
+      position: relative;
+    }
+    .roi-block::before {
+      content: '\201C';
+      position: absolute;
+      top: -16px;
+      left: 32px;
+      font-family: var(--ff-display);
+      font-size: 5rem;
+      color: var(--kraft);
+      line-height: 1;
+      background: var(--paper);
+      padding: 0 8px;
+    }
+    .roi-quote {
+      font-family: var(--ff-display);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--ink);
+      font-style: italic;
+    }
     </style>
 </head>
 <body>
@@ -646,9 +801,131 @@
   </div>
 </section>
 
-  <!-- ✦ TRACK RECORD ✦ -->
+<section class="track-record" id="track-record">
+  <div class="container">
+    <p class="section-label">Results</p>
+    <h2>Track Record</h2>
+    <p class="track-intro">30+ admits across HBS, Stanford GSB, Wharton, and every M7 program since 2020. Over 80% received merit scholarships.</p>
 
-  <!-- ✦ PACKAGES ✦ -->
+    <div class="track-table">
+      <div class="track-year-block">
+        <div class="track-year">2024–25</div>
+        <div class="track-admits">
+          <span class="admit-tag">HBS</span>
+          <span class="admit-tag">Stanford GSB</span>
+          <span class="admit-tag admit-tag--scholarship">Wharton $$$</span>
+          <span class="admit-tag admit-tag--scholarship">Kellogg $$$</span>
+          <span class="admit-tag">MIT Sloan</span>
+          <span class="admit-tag admit-tag--scholarship">CBS $$$</span>
+        </div>
+      </div>
+      <div class="track-year-block">
+        <div class="track-year">2023–24</div>
+        <div class="track-admits">
+          <span class="admit-tag">HBS</span>
+          <span class="admit-tag admit-tag--scholarship">Stanford GSB $$$</span>
+          <span class="admit-tag">Wharton</span>
+          <span class="admit-tag admit-tag--scholarship">Booth $$$</span>
+          <span class="admit-tag admit-tag--scholarship">Yale SOM $$$</span>
+          <span class="admit-tag admit-tag--scholarship">HaaS $$$</span>
+        </div>
+      </div>
+      <div class="track-year-block">
+        <div class="track-year">2022–23</div>
+        <div class="track-admits">
+          <span class="admit-tag">HBS</span>
+          <span class="admit-tag">Wharton</span>
+          <span class="admit-tag admit-tag--scholarship">MIT Sloan $$$</span>
+          <span class="admit-tag admit-tag--scholarship">CBS $$$</span>
+          <span class="admit-tag admit-tag--scholarship">Kellogg $$$</span>
+        </div>
+      </div>
+      <div class="track-year-block">
+        <div class="track-year">2021–22</div>
+        <div class="track-admits">
+          <span class="admit-tag">Stanford GSB</span>
+          <span class="admit-tag">HBS</span>
+          <span class="admit-tag admit-tag--scholarship">Wharton $$$</span>
+          <span class="admit-tag admit-tag--scholarship">Booth $$$</span>
+        </div>
+      </div>
+      <div class="track-year-block">
+        <div class="track-year">2020–21</div>
+        <div class="track-admits">
+          <span class="admit-tag">HBS</span>
+          <span class="admit-tag admit-tag--scholarship">Wharton $$$</span>
+          <span class="admit-tag admit-tag--scholarship">MIT Sloan $$$</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="track-footnote">$$$ = merit scholarship received · School names shown, not student names, to protect confidentiality</p>
+  </div>
+</section>
+
+<section class="packages" id="packages">
+  <div class="container">
+    <p class="section-label">Investment</p>
+    <h2>Packages</h2>
+
+    <div class="packages-grid">
+
+      <div class="pkg-card">
+        <div class="pkg-name">Core</div>
+        <div class="pkg-price">$10,000</div>
+        <div class="pkg-scope">Up to 3 schools</div>
+        <ul class="pkg-features">
+          <li>Strategy &amp; school selection</li>
+          <li>Résumé review</li>
+          <li>Recommender guidance</li>
+          <li>Unlimited essay edits</li>
+          <li>Superpower Exercise</li>
+          <li>Application form review</li>
+          <li>Pre-submission committee review</li>
+          <li>2 mock interviews per school</li>
+          <li>24-hr turnaround on feedback</li>
+          <li>Scholarship negotiation</li>
+          <li>Project management software</li>
+          <li>Waitlist strategy</li>
+          <li>Lisa's coaching team access</li>
+        </ul>
+      </div>
+
+      <div class="pkg-card pkg-card--featured">
+        <div class="pkg-badge">Most Popular</div>
+        <div class="pkg-name">Premium</div>
+        <div class="pkg-price">$12,500</div>
+        <div class="pkg-scope">Up to 5 schools</div>
+        <ul class="pkg-features">
+          <li>Everything in Core</li>
+          <li>2 additional schools</li>
+          <li>Priority scheduling</li>
+          <li>Extended interview prep</li>
+        </ul>
+      </div>
+
+      <div class="pkg-card">
+        <div class="pkg-name">All-In</div>
+        <div class="pkg-price">$20,000</div>
+        <div class="pkg-scope">Unlimited schools</div>
+        <ul class="pkg-features">
+          <li>Everything in Premium</li>
+          <li>Unlimited school applications</li>
+          <li>Deepest level of support</li>
+          <li>Maximum flexibility</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <p class="pkg-footnote">* $2,000 for each additional school beyond Core package</p>
+
+    <div class="roi-block">
+      <p class="roi-quote">"Getting an MBA is expensive — $250,000+ when you factor in tuition and opportunity cost. The question isn't whether coaching is expensive. It's whether the ROI makes sense. One scholarship negotiation can return 3–5x your coaching investment. One right school can change the trajectory of your career."</p>
+    </div>
+
+  </div>
+</section>
 
   <!-- ✦ TESTIMONIALS ✦ -->
 
