@@ -269,7 +269,49 @@
       line-height: 1;
     }
     .pledge-card p { font-size: 0.95rem; line-height: 1.7; }
-  </style>
+
+    /* === WHAT MAKES US DIFFERENT === */
+    .diff { background: var(--paper); }
+    .diff h2 { margin-bottom: 12px; }
+    .diff-intro {
+      font-size: 1rem;
+      color: var(--fade);
+      margin-bottom: 56px;
+      letter-spacing: 0.02em;
+    }
+    .diff-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .diff-card {
+      background: white;
+      border: 1.5px solid var(--ink);
+      padding: 28px 24px;
+      position: relative;
+    }
+    .diff-card:nth-child(odd) { transform: rotate(-0.4deg); }
+    .diff-card:nth-child(even) { transform: rotate(0.3deg); }
+    .diff-card:nth-child(3n) { transform: rotate(-0.6deg); }
+    .diff-number {
+      font-family: var(--ff-display);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--border);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .diff-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+      color: var(--ink);
+    }
+    .diff-card p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--pencil);
+    }
+    </style>
 </head>
 <body>
 
@@ -369,7 +411,62 @@
   </div>
 </section>
 
-  <!-- ✦ WHAT MAKES US DIFFERENT ✦ -->
+  <section class="diff" id="process">
+  <div class="container">
+    <p class="section-label">Why Choose Us</p>
+    <h2>What Makes Us Different</h2>
+    <p class="diff-intro">Seven things we do differently — and why they matter.</p>
+
+    <div class="diff-grid">
+
+      <div class="diff-card">
+        <div class="diff-number">1</div>
+        <h3>The Superpower Exercise</h3>
+        <p>Our signature methodology. We don't start with essays — we start with excavation. You'll uncover the through-line that connects everything you've done, and build your entire application around it. This framework doesn't just get you into an MBA program. It's the foundation for how you tell your story for the rest of your career.</p>
+      </div>
+
+      <div class="diff-card">
+        <div class="diff-number">2</div>
+        <h3>Mentor, Not Task Manager</h3>
+        <p>Lisa doesn't just edit your essays. She gets into your head. She'll challenge your assumptions, push you toward insights you didn't know you had, and nudge you in the right direction — even when that direction is uncomfortable. High-touch, high-impact mentorship from someone who's been through it.</p>
+      </div>
+
+      <div class="diff-card">
+        <div class="diff-number">3</div>
+        <h3>We Refuse to Write Your Essays</h3>
+        <p>Other consultants offer polished drafts. We don't. Every word has to come from you — because shortcuts produce essays that sound like someone else. When you walk into an interview, you need to own your story completely. We help you find it, shape it, and tell it in your own voice.</p>
+      </div>
+
+      <div class="diff-card">
+        <div class="diff-number">4</div>
+        <h3>Scholarships, Not Just Admits</h3>
+        <p>Getting in is one thing. Paying for it is another. Over 80% of our students received merit scholarships — because we help you understand your leverage and negotiate strategically. An admit without scholarship money is a half-win. We play for the full win.</p>
+      </div>
+
+      <div class="diff-card">
+        <div class="diff-number">5</div>
+        <h3>You Join the Network for Life</h3>
+        <p>This isn't a transaction. Once you're a Superpower Coaching client, you're connected to a growing community of ambitious professionals across HBS, GSB, Wharton, and beyond. Lisa actively connects clients with each other for career advice, deal flow, and support — and the relationship is reciprocal, not one-directional.</p>
+      </div>
+
+      <div class="diff-card">
+        <div class="diff-number">6</div>
+        <h3>Selective by Design</h3>
+        <p>We work with approximately 10 students per year. Not because we can't scale — but because we won't. Mutual fit is required. We turn down clients who aren't the right match, and we expect clients to choose us for the right reasons too. No revenue pressure means no compromises.</p>
+      </div>
+
+      <div class="diff-card">
+        <div class="diff-number">7</div>
+        <h3>The Team Behind You</h3>
+        <p>Lisa is supported by a team of HBS and M7 graduates with deep expertise across industries and MBA programs. Their network becomes yours. When you need a connection, a reference, or an insider perspective on a program, we make the introduction.</p>
+      </div>
+
+    </div>
+
+    <!-- ✦ testimonial videos go here ✦ -->
+
+  </div>
+</section>
 
   <!-- ✦ MBA ROADMAP ✦ -->
 
