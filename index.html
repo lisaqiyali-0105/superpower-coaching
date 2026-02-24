@@ -181,6 +181,94 @@
       text-align: center;
       border: 2px dashed var(--fade);
     }
+
+    /* === ABOUT === */
+    .about { background: white; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 240px;
+      gap: 64px;
+      align-items: start;
+      margin-top: 32px;
+    }
+    .about h2 { margin-bottom: 28px; }
+    .founder-letter { max-width: 580px; }
+    .founder-letter p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--pencil);
+      margin-bottom: 20px;
+    }
+    .letter-sig {
+      font-family: var(--ff-display);
+      font-style: italic;
+      color: var(--ink) !important;
+      font-size: 0.95rem !important;
+      margin-top: 28px;
+    }
+    .about-photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      border: 1.5px solid var(--border);
+      filter: grayscale(20%);
+      margin-top: 8px;
+    }
+
+    /* === WHO WE'RE LOOKING FOR === */
+    .who { }
+    .who h2 { margin-bottom: 20px; }
+    .who-intro {
+      font-size: 1.1rem;
+      max-width: 620px;
+      color: var(--pencil);
+      line-height: 1.75;
+      margin-bottom: 48px;
+    }
+    .myth-bust { margin-bottom: 56px; }
+    .myth-label {
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--fade);
+      margin-bottom: 16px;
+    }
+    .myth-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+    }
+    .myth-list li {
+      font-size: 1rem;
+      color: var(--fade);
+    }
+    .myth-list s { text-decoration-color: var(--kraft); text-decoration-thickness: 2px; }
+    .pledge-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .pledge-card {
+      border: 1.5px solid var(--ink);
+      padding: 32px 28px;
+      background: white;
+      position: relative;
+    }
+    .pledge-card:nth-child(1) { transform: rotate(-0.4deg); }
+    .pledge-card:nth-child(2) { transform: rotate(0.3deg); }
+    .pledge-card:nth-child(3) { transform: rotate(-0.5deg); }
+    .pledge-number {
+      font-family: var(--ff-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--border);
+      margin-bottom: 16px;
+      line-height: 1;
+    }
+    .pledge-card p { font-size: 0.95rem; line-height: 1.7; }
   </style>
 </head>
 <body>
@@ -220,9 +308,65 @@
     </div>
   </section>
 
-  <!-- ✦ ABOUT / FOUNDER LETTER ✦ -->
+  <section class="about" id="about-letter">
+  <div class="container">
+    <p class="section-label">From the Founder</p>
+    <div class="about-inner">
+      <div class="about-text">
+        <h2>A Note from Lisa</h2>
+        <div class="founder-letter">
+          <p>I started Superpower Coaching because I kept seeing the same thing: brilliant people talking themselves out of applying to top programs, convinced they weren't "the right type."</p>
+          <p>The truth? The schools that matter aren't looking for perfect profiles. They're looking for people who know exactly who they are — and can articulate why an MBA is the next chapter in a story that only they could tell.</p>
+          <p>That's where the Superpower Exercise comes in. It's not a writing prompt. It's a process of excavation. We help you find the thread that runs through everything you've done — and build your entire application around it.</p>
+          <p>I work with a small, selective cohort each year. No volume. No templates. No ghostwriting. Just real mentorship from someone who's been through this, believes in you, and will push you until your application is undeniably, authentically yours.</p>
+          <p class="letter-sig">— Lisa Qiya Li, HBS '23 · Founder, Superpower Coaching</p>
+        </div>
+      </div>
+      <div class="about-photo-wrap">
+        <img 
+          src="lisa-headshot.jpeg" 
+          alt="Lisa Qiya Li" 
+          class="about-photo"
+          onerror="this.style.display='none';"
+        />
+      </div>
+    </div>
+  </div>
+</section>
 
-  <!-- ✦ WHO WE'RE LOOKING FOR ✦ -->
+  <section class="who" id="who">
+  <div class="container">
+    <p class="section-label">Ideal Fit</p>
+    <h2>Who We're Looking For</h2>
+    <p class="who-intro">One of the biggest myths about getting into a top US business school is that you need perfect credentials. You don't. You need a compelling story.</p>
+    
+    <div class="myth-bust">
+      <p class="myth-label">We don't require any of this:</p>
+      <ul class="myth-list">
+        <li><s>GMAT 750+</s></li>
+        <li><s>GPA 3.9+</s></li>
+        <li><s>McKinsey / Goldman pedigree</s></li>
+        <li><s>Ivy League undergrad</s></li>
+        <li><s>A "prestige" career path</s></li>
+      </ul>
+    </div>
+
+    <div class="pledge-cards">
+      <div class="pledge-card">
+        <div class="pledge-number">01</div>
+        <p>You're ready to do the <strong>hard introspective work</strong> to find your authentic story — not just list your accomplishments.</p>
+      </div>
+      <div class="pledge-card">
+        <div class="pledge-number">02</div>
+        <p>You want a <strong>mentor, not a ghostwriter</strong>. You're committed to owning every word of your application.</p>
+      </div>
+      <div class="pledge-card">
+        <div class="pledge-number">03</div>
+        <p>You're applying because an MBA is the <strong>right next chapter</strong> in your story — not because everyone else is doing it.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- ✦ WHAT MAKES US DIFFERENT ✦ -->
 
