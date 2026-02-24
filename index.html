@@ -356,6 +356,10 @@
       border-right: 1px solid var(--border);
     }
     .stat-item:last-child { border-right: none; }
+    .stat-n--secondary {
+      color: var(--pencil);
+      font-size: 1.6rem;
+    }
     .stat-n {
       font-family: var(--ff-display);
       font-size: 2.8rem;
@@ -369,10 +373,6 @@
       text-align: center;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-    }
-    .stat-n--combined {
-      font-size: 2rem;
-      letter-spacing: -0.01em;
     }
     /* === MBA ROADMAP === */
     .roadmap {
@@ -807,7 +807,8 @@
   <!-- ✦ STATS STRIP ✦ -->
   <div class="stats-strip" aria-label="Key statistics">
     <div class="stat-item">
-      <span class="stat-n stat-n--combined">95% / 30+</span>
+      <span class="stat-n">95%</span>
+      <span class="stat-n stat-n--secondary">30+</span>
       <span class="stat-l">Clients Admitted to M7 Programs</span>
     </div>
     <div class="stat-item">
