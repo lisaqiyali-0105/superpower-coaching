@@ -80,13 +80,145 @@
       color: var(--fade);
       margin-bottom: 16px;
     }
+
+    /* === NAV === */
+    .nav {
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 48px;
+      background: var(--paper);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+    }
+    .nav-logo {
+      font-family: var(--ff-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      font-size: 0.82rem;
+      color: var(--pencil);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    .nav-links a:hover { color: var(--ink); }
+
+    /* === HERO === */
+    .hero {
+      padding: 80px 48px 96px;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 64px;
+      align-items: center;
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .hero-eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--kraft);
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+    .hero h1 {
+      margin-bottom: 8px;
+    }
+    .hero-underline {
+      margin: 12px 0 28px;
+      display: block;
+    }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--pencil);
+      max-width: 480px;
+      margin-bottom: 36px;
+      line-height: 1.75;
+    }
+    .hero-cta {
+      display: inline-block;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink);
+      border-bottom: 1.5px solid var(--ink);
+      padding-bottom: 2px;
+      cursor: pointer;
+    }
+    .hero-cta:hover { color: var(--kraft); border-color: var(--kraft); }
+    .hero-photo-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .hero-photo {
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      border: 2px solid var(--border);
+      filter: grayscale(15%);
+    }
+    .hero-photo-placeholder {
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: var(--fade);
+      text-align: center;
+      border: 2px dashed var(--fade);
+    }
   </style>
 </head>
 <body>
 
   <!-- ✦ NAV ✦ -->
+  <nav class="nav">
+    <a href="#" class="nav-logo">Superpower Coaching</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#packages">Packages</a></li>
+      <li><a href="#team">Team</a></li>
+    </ul>
+  </nav>
 
   <!-- ✦ HERO ✦ -->
+  <section class="hero" id="about">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Deferred MBA · 2026–2027</p>
+      <h1>Find your voice.<br>Unleash your superpower.<br>Own your story.</h1>
+      <svg class="hero-underline" width="340" height="14" viewBox="0 0 340 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 10 C 40 4, 80 13, 120 7 S 180 3, 220 9 S 280 13, 338 6" stroke="#C4A77D" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+      </svg>
+      <p class="hero-sub">Since 2020, Lisa has helped 30+ candidates gain admission to HBS, Stanford GSB, Wharton, and beyond.</p>
+      <a href="#packages" class="hero-cta">See Packages ↓</a>
+    </div>
+    <div class="hero-photo-wrap">
+      <img
+        src="lisa-headshot.jpeg"
+        alt="Lisa Qiya Li, founder of Superpower Coaching"
+        class="hero-photo"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+      />
+      <div class="hero-photo-placeholder" style="display:none;">
+        Photo<br>Coming Soon
+      </div>
+    </div>
+  </section>
 
   <!-- ✦ ABOUT / FOUNDER LETTER ✦ -->
 
