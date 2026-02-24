@@ -311,6 +311,92 @@
       line-height: 1.7;
       color: var(--pencil);
     }
+
+    /* === MBA ROADMAP === */
+    .roadmap { background: white; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .roadmap h2 { margin-bottom: 12px; }
+    .roadmap-intro {
+      font-size: 1rem;
+      color: var(--fade);
+      margin-bottom: 56px;
+    }
+    .timeline {
+      position: relative;
+      padding-left: 48px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 14px;
+      top: 8px;
+      bottom: 8px;
+      width: 1.5px;
+      background: repeating-linear-gradient(
+        to bottom,
+        var(--border) 0px,
+        var(--border) 6px,
+        transparent 6px,
+        transparent 12px
+      );
+    }
+    .timeline-item {
+      display: flex;
+      gap: 28px;
+      margin-bottom: 40px;
+      align-items: flex-start;
+      position: relative;
+    }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-node {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: white;
+      border: 1.5px solid var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--ff-display);
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--ink);
+      margin-left: -48px;
+      position: relative;
+      z-index: 1;
+    }
+    .timeline-node--highlight {
+      background: var(--kraft);
+      border-color: var(--kraft);
+      color: white;
+    }
+    .timeline-content {
+      padding-top: 4px;
+      flex: 1;
+    }
+    .timeline-content h3 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .timeline-badge {
+      font-family: var(--ff-body);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: white;
+      background: var(--kraft);
+      padding: 3px 8px;
+      font-weight: 500;
+    }
+    .timeline-content p {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: var(--pencil);
+    }
     </style>
 </head>
 <body>
@@ -468,7 +554,97 @@
   </div>
 </section>
 
-  <!-- ✦ MBA ROADMAP ✦ -->
+  <section class="roadmap" id="roadmap">
+  <div class="container">
+    <p class="section-label">The Process</p>
+    <h2>The MBA Roadmap</h2>
+    <p class="roadmap-intro">Ten steps from where you are now to where you want to be.</p>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-node">1</div>
+        <div class="timeline-content">
+          <h3>Craft a Winning Strategy</h3>
+          <p>We start by understanding your profile, goals, and what makes you uniquely compelling. Together we build a school list and positioning strategy tailored to you — not a template.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-node">2</div>
+        <div class="timeline-content">
+          <h3>Enhance Your Profile</h3>
+          <p>Identify gaps and opportunities before applications open. Whether it's a promotion, a side project, or a community role — we help you make strategic moves that strengthen your story.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-node">3</div>
+        <div class="timeline-content">
+          <h3>Program Selection</h3>
+          <p>Deep-dive into program culture, curriculum, and placement. We help you build a balanced school list with reach, target, and likely programs — and understand what each school is actually looking for.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-node">4</div>
+        <div class="timeline-content">
+          <h3>Tailor Your Résumé</h3>
+          <p>MBA résumés are a different format. We help you reframe your work experience for a business school audience — quantifying impact, highlighting leadership, and positioning you for your target schools.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-node">5</div>
+        <div class="timeline-content">
+          <h3>Manage Your Recommenders</h3>
+          <p>Your recommenders are your advocates. We guide you on selecting the right people, briefing them effectively, and making sure their letters reinforce — not contradict — your narrative.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item timeline-item--highlight">
+        <div class="timeline-node timeline-node--highlight">6</div>
+        <div class="timeline-content">
+          <h3>Unlimited Essay Edits <span class="timeline-badge">Superpower Exercise starts here</span></h3>
+          <p>This is where the magic happens. The Superpower Exercise begins — excavating your authentic story, finding your through-line, and building every essay around it. Unlimited rounds of feedback until every word is unmistakably yours.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-node">7</div>
+        <div class="timeline-content">
+          <h3>Application Forms</h3>
+          <p>The details matter. We review every component of your application — activities, short answers, optional essays — to ensure nothing is left on the table.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-node">8</div>
+        <div class="timeline-content">
+          <h3>Pre-Submission Committee Review</h3>
+          <p>Before you submit, your complete application gets a final review from our team — multiple HBS and M7 grads reading it with fresh eyes, identifying anything that could be stronger.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-node">9</div>
+        <div class="timeline-content">
+          <h3>Interview Prep</h3>
+          <p>We run mock interviews calibrated to each school's format — HBS case method, GSB values-based, Wharton team-based. You'll walk in having already done it under pressure, multiple times.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-node">10</div>
+        <div class="timeline-content">
+          <h3>Offers &amp; Waitlist Strategy</h3>
+          <p>Admitted? We help you negotiate scholarships and compare programs. Waitlisted? We craft your LOCIs. Multiple admits? We help you make the right choice for your goals.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
   <!-- ✦ MEET THE TEAM ✦ -->
 
