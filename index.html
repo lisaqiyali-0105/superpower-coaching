@@ -645,20 +645,29 @@
       color: var(--kraft);
     }
 
-    /* === VIDEO PLACEHOLDER === */
-    .video-placeholder {
-      margin-top: 48px;
-      border: 1.5px dashed var(--border);
-      padding: 56px 24px;
-      text-align: center;
-      background: var(--paper);
+    /* === VIDEO EMBED === */
+    .video-embed {
+      margin-top: 56px;
     }
-    .video-placeholder-inner {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
+    .video-embed-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
       color: var(--fade);
+      margin-bottom: 16px;
+    }
+    .video-wrap {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 */
+      border: 1.5px solid var(--border);
+    }
+    .video-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
     }
     .video-placeholder-inner p {
       font-size: 0.85rem;
@@ -1281,10 +1290,15 @@
     <!-- ✦ add new testimonial here ✦ -->
 
     <!-- ✦ testimonial videos embed here ✦ -->
-    <div class="video-placeholder">
-      <div class="video-placeholder-inner">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>
-        <p>Client testimonial video coming soon</p>
+    <div class="video-embed">
+      <p class="video-embed-label">Client Testimonial</p>
+      <div class="video-wrap">
+        <iframe
+          src="https://www.youtube.com/embed/UQ1_fAp-qAQ"
+          title="Superpower Coaching client testimonial"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
       </div>
     </div>
 
