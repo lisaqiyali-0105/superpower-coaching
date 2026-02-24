@@ -552,6 +552,92 @@
       color: var(--ink);
       font-style: italic;
     }
+
+    /* === TESTIMONIALS === */
+    .testimonials { background: white; border-top: 1px solid var(--border); }
+    .testimonials h2 { margin-bottom: 48px; }
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .testi-card {
+      border: 1.5px solid var(--border);
+      padding: 36px 32px;
+      position: relative;
+      background: var(--paper);
+    }
+    .testi-card:nth-child(odd) { transform: rotate(-0.3deg); }
+    .testi-card:nth-child(even) { transform: rotate(0.25deg); }
+    .testi-quote-mark {
+      font-family: var(--ff-display);
+      font-size: 4rem;
+      line-height: 1;
+      color: var(--kraft);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .testi-text {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--pencil);
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+    .testi-attribution { border-top: 1px solid var(--border); padding-top: 16px; }
+    .testi-name {
+      font-family: var(--ff-display);
+      font-weight: 600;
+      color: var(--ink);
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+    .testi-detail {
+      font-size: 0.78rem;
+      color: var(--fade);
+      letter-spacing: 0.03em;
+    }
+
+    /* === FAQ === */
+    .faq { border-top: 1px solid var(--border); }
+    .faq h2 { margin-bottom: 48px; }
+    .faq-list { max-width: 720px; }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+    .faq-question {
+      list-style: none;
+      padding: 24px 0;
+      font-family: var(--ff-display);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--ink);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+    .faq-question::-webkit-details-marker { display: none; }
+    .faq-question::after {
+      content: '+';
+      font-family: var(--ff-body);
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--fade);
+      flex-shrink: 0;
+      margin-left: 16px;
+    }
+    details[open] .faq-question::after { content: '−'; }
+    .faq-answer {
+      padding-bottom: 24px;
+    }
+    .faq-answer p {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--pencil);
+    }
     </style>
 </head>
 <body>
@@ -924,9 +1010,102 @@
   </div>
 </section>
 
-  <!-- ✦ TESTIMONIALS ✦ -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <p class="section-label">What They Say</p>
+    <h2>Results, In Their Words</h2>
 
-  <!-- ✦ FAQ ✦ -->
+    <div class="testi-grid">
+
+      <div class="testi-card">
+        <div class="testi-quote-mark">&ldquo;</div>
+        <p class="testi-text">Lisa doesn't just help you write essays — she helps you figure out who you are. The Superpower Exercise completely changed how I talk about myself professionally. I went into my HBS and GSB interviews feeling like I actually knew my story for the first time.</p>
+        <div class="testi-attribution">
+          <div class="testi-name">L.F.</div>
+          <div class="testi-detail">Private Equity · GSB, Wharton, Kellogg admit</div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-quote-mark">&ldquo;</div>
+        <p class="testi-text">I was skeptical about MBA consulting — I'd heard stories of consultants who basically write everything for you. Lisa is the complete opposite. She pushed me hard, never let me settle for a mediocre answer, and made sure every word was genuinely mine. HBS, Booth, Yale, HaaS — I couldn't believe the results.</p>
+        <div class="testi-attribution">
+          <div class="testi-name">Q.X.</div>
+          <div class="testi-detail">Corporate / VC · HBS, Booth, Yale SOM, HaaS admit</div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-quote-mark">&ldquo;</div>
+        <p class="testi-text">The scholarship negotiation alone was worth it. Lisa coached me on how to present competing offers and make my case — I ended up with significant merit aid at MIT Sloan. If you're on the fence about the investment, run the numbers.</p>
+        <div class="testi-attribution">
+          <div class="testi-name">N.C.</div>
+          <div class="testi-detail">M&amp;A Advisory · MIT Sloan, CBS admit</div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-quote-mark">&ldquo;</div>
+        <p class="testi-text">Working with Lisa felt less like hiring a consultant and more like having a brilliant older sister who went to Wharton and genuinely wanted me to succeed. She was available, direct, and never sugarcoated feedback. I got into Wharton on my first application cycle.</p>
+        <div class="testi-attribution">
+          <div class="testi-name">J.S.</div>
+          <div class="testi-detail">Consulting · Wharton admit</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ✦ add new testimonial here ✦ -->
+    <!-- ✦ testimonial videos embed here ✦ -->
+
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="container">
+    <p class="section-label">Questions</p>
+    <h2>Frequently Asked</h2>
+
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary class="faq-question">How does the hour cap work?</summary>
+        <div class="faq-answer">
+          <p>Each package includes a set number of hours — but we don't count hours the way most consultants do. We count hours spent in active sessions together, not your time drafting or thinking between sessions. In practice, most clients use every hour available and tell us they wish they had more.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">How do you calculate hours spent?</summary>
+        <div class="faq-answer">
+          <p>We log time from the moment a session starts to when it ends — calls, feedback reviews, and working sessions all count. Async messages and quick clarifications don't. You'll always know how many hours remain, and we'll flag if you're running low so you can plan accordingly.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Would you share past essays as examples?</summary>
+        <div class="faq-answer">
+          <p>No — and this is intentional. We don't share past essays because we never want you anchoring to someone else's story. Your application has to be entirely yours. What we will share: frameworks, feedback principles, and our methodology for finding your superpower. The output belongs to you alone.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">How does the coaching team work together?</summary>
+        <div class="faq-answer">
+          <p>Lisa leads every engagement personally. The broader team — HBS and M7 grads across industries — contributes through the pre-submission committee review, specific school expertise, and network introductions. You always know who's reading your work and why their perspective is relevant to your application.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Is the investment worth it?</summary>
+        <div class="faq-answer">
+          <p>Consider the math: an MBA from HBS or GSB costs $250,000+ when you factor in tuition and two years of foregone income. A single merit scholarship negotiation often returns 3–5x the coaching fee. Beyond dollars, the right school changes the trajectory of your career for decades. We're biased — but so is the data.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
 
   <!-- ✦ FOOTER ✦ -->
 
