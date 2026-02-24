@@ -325,7 +325,7 @@
     /* === STATS STRIP === */
     .stats-strip {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       background: var(--ink);
       padding: 0;
     }
@@ -353,22 +353,6 @@
       letter-spacing: 0.07em;
       text-transform: uppercase;
     }
-    .stats-tagline {
-      background: var(--ink);
-      text-align: center;
-      padding: 0 24px 40px;
-      font-family: var(--ff-display);
-      font-size: 1.15rem;
-      color: rgba(255,255,255,0.75);
-      letter-spacing: 0.01em;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding-top: 24px;
-    }
-    .stats-tagline em {
-      color: var(--kraft);
-      font-style: italic;
-    }
-
     /* === MBA ROADMAP === */
     .roadmap {
       background: white;
@@ -692,7 +676,7 @@
       :root { --section-pad: 64px 24px; }
 
       /* Stats strip */
-      .stats-strip { grid-template-columns: repeat(2, 1fr); }
+      .stats-strip { grid-template-columns: 1fr; }
       .stat-item { padding: 32px 16px; }
       .stat-n { font-size: 2.2rem; }
 
@@ -798,24 +782,17 @@
   <!-- ✦ STATS STRIP ✦ -->
   <div class="stats-strip" aria-label="Key statistics">
     <div class="stat-item">
-      <span class="stat-n">30+</span>
-      <span class="stat-l">M7 Admits</span>
+      <span class="stat-n">$2MM+</span>
+      <span class="stat-l">In Scholarships to Date</span>
     </div>
     <div class="stat-item">
-      <span class="stat-n">80%</span>
-      <span class="stat-l">Received Scholarships</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-n">~10</span>
-      <span class="stat-l">Students Per Year</span>
+      <span class="stat-n">~8</span>
+      <span class="stat-l">Clients Per Year</span>
     </div>
     <div class="stat-item">
       <span class="stat-n">6</span>
       <span class="stat-l">Years Running</span>
     </div>
-  </div>
-  <div class="stats-tagline">
-    A <em>career strategist</em>. A <em>storytelling coach</em>. A <em>lifelong mentor</em>.
   </div>
 
   <section class="about" id="about-letter">
