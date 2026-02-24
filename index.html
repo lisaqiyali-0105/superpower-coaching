@@ -326,17 +326,18 @@
     .stats-strip {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      background: var(--ink);
-      padding: 0;
+      background: var(--paper);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
     .stat-item {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      padding: 44px 24px;
-      border-right: 1px solid rgba(255,255,255,0.1);
+      gap: 10px;
+      padding: 48px 24px;
+      border-right: 1px solid var(--border);
     }
     .stat-item:last-child { border-right: none; }
     .stat-n {
@@ -347,10 +348,10 @@
       line-height: 1;
     }
     .stat-l {
-      font-size: 0.73rem;
-      color: rgba(255,255,255,0.6);
+      font-size: 0.72rem;
+      color: var(--fade);
       text-align: center;
-      letter-spacing: 0.07em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
     /* === MBA ROADMAP === */
@@ -1139,6 +1140,15 @@
         <summary class="faq-question">Would you share past essays as examples?</summary>
         <div class="faq-answer">
           <p>No — and this is intentional. We don't share past essays because we never want you anchoring to someone else's story. Your application has to be entirely yours. What we will share: frameworks, feedback principles, and our methodology for finding your superpower. The output belongs to you alone.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">How do I know if we're a good fit?</summary>
+        <div class="faq-answer">
+          <p>Fit and mentality — that's what I'm looking for. I want to see evidence that we can speak the same language, that you have a growth mindset, and that you genuinely want to push yourself toward something great.</p>
+          <p>I hold a high standard for my clients, and I expect them to respect that. That means being willing to grow, and being able to take constructive feedback without taking it personally.</p>
+          <p>The best way to find out? Book a complimentary intro call — I run one with every prospective client. If you leave that call energized and challenged, if my style resonates, that's a strong signal we'll work well together.</p>
         </div>
       </details>
 
