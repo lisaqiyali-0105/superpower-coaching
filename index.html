@@ -199,11 +199,11 @@
       color: var(--pencil);
       margin-bottom: 20px;
     }
-    .letter-sig {
+    .founder-letter .letter-sig {
       font-family: var(--ff-display);
       font-style: italic;
-      color: var(--ink) !important;
-      font-size: 0.95rem !important;
+      color: var(--ink);
+      font-size: 0.95rem;
       margin-top: 28px;
     }
     .about-photo {
@@ -323,12 +323,13 @@
         </div>
       </div>
       <div class="about-photo-wrap">
-        <img 
-          src="lisa-headshot.jpeg" 
-          alt="Lisa Qiya Li" 
+        <img
+          src="lisa-headshot.jpeg"
+          alt="Lisa Qiya Li"
           class="about-photo"
-          onerror="this.style.display='none';"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
         />
+        <div class="hero-photo-placeholder" style="display:none; width:200px; height:200px;">Lisa</div>
       </div>
     </div>
   </div>
