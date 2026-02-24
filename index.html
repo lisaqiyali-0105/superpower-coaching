@@ -136,6 +136,30 @@
       margin: 12px 0 28px;
       display: block;
     }
+    .hero-tagline {
+      margin: 20px 0 28px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .hero-tagline::before {
+      content: '';
+      flex-shrink: 0;
+      width: 28px;
+      height: 1.5px;
+      background: var(--kraft);
+    }
+    .hero-tagline-text {
+      font-family: var(--ff-display);
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--pencil);
+      letter-spacing: 0.01em;
+    }
+    .hero-tagline-text em {
+      color: var(--kraft);
+      font-style: italic;
+    }
     .hero-sub {
       font-size: 1.05rem;
       color: var(--pencil);
@@ -765,7 +789,8 @@
         <path d="M2 10 C 40 4, 80 13, 120 7 S 180 3, 220 9 S 280 13, 338 6" stroke="#C4A77D" stroke-width="2.5" stroke-linecap="round" fill="none"/>
       </svg>
       <p class="hero-sub">Since 2020, Lisa has helped 30+ candidates gain admission to HBS, Stanford GSB, Wharton, and beyond.</p>
-      <a href="#packages" class="hero-cta">See Packages ↓</a>
+      <p class="hero-tagline"><span class="hero-tagline-text">A <em>career strategist</em>. A <em>storytelling coach</em>. A <em>lifelong mentor</em>.</span></p>
+      <a href="mailto:lisa@superpowercoaching.com" class="hero-cta">Book a Free Intro Call →</a>
     </div>
     <div class="hero-photo-wrap">
       <img
@@ -1111,6 +1136,14 @@
     <h2>Frequently Asked</h2>
 
     <div class="faq-list">
+
+      <details class="faq-item">
+        <summary class="faq-question">What exactly is a deferred MBA?</summary>
+        <div class="faq-answer">
+          <p>A deferred MBA is essentially a guaranteed ticket to an elite club — secured before you graduate, before your first professional role even begins. Most people treat it as an insurance plan. I think it's more than that: it's preview access to a network of extraordinary alumni, and a branding advantage that opens doors for you before your peers even know those doors exist.</p>
+          <p>Timing matters because you can absolutely apply as a regular MBA candidate later in your career — but getting in before you start means an enormous amount of pressure comes off your shoulders from day one. Beyond that, going through the application process is formative in itself. You learn more about yourself earlier. You develop sharper self-awareness. You tell stronger stories later in your career. That compound advantage is hard to overstate — it's one of the most underrated ways to get ahead.</p>
+        </div>
+      </details>
 
       <details class="faq-item">
         <summary class="faq-question">When should I start working with a coach?</summary>
