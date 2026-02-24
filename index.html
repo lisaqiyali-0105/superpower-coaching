@@ -285,11 +285,15 @@
       gap: 20px;
     }
     .diff-card {
-      background: white;
-      border: 1.5px solid var(--ink);
+      background: #FDFCF6;
+      border: 1px solid rgba(196, 167, 125, 0.38);
+      box-shadow: 2px 5px 16px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.04);
       padding: 28px 24px;
       position: relative;
     }
+    .diff-card:nth-child(3n+1) { background: #FDFCF5; }
+    .diff-card:nth-child(3n+2) { background: #FAFAF2; }
+    .diff-card:nth-child(3n)   { background: #FDFBEE; }
     .diff-icon {
       width: 36px;
       height: 36px;
@@ -318,8 +322,55 @@
       color: var(--pencil);
     }
 
+    /* === STATS STRIP === */
+    .stats-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: var(--ink);
+      padding: 0;
+    }
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 44px 24px;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-n {
+      font-family: var(--ff-display);
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--kraft);
+      line-height: 1;
+    }
+    .stat-l {
+      font-size: 0.73rem;
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
     /* === MBA ROADMAP === */
-    .roadmap { background: white; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .roadmap {
+      background: white;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    .roadmap-plane {
+      position: absolute;
+      right: -40px;
+      top: 30px;
+      width: 440px;
+      opacity: 0.04;
+      pointer-events: none;
+      transform: rotate(-10deg);
+    }
     .roadmap h2 { margin-bottom: 12px; }
     .roadmap-intro {
       font-size: 1rem;
@@ -402,161 +453,6 @@
       font-size: 0.92rem;
       line-height: 1.7;
       color: var(--pencil);
-    }
-
-    /* === TRACK RECORD === */
-    .track-record { }
-    .track-record h2 { margin-bottom: 12px; }
-    .track-intro {
-      font-size: 1rem;
-      color: var(--pencil);
-      max-width: 580px;
-      margin-bottom: 48px;
-      line-height: 1.7;
-    }
-    .track-table { display: flex; flex-direction: column; gap: 0; }
-    .track-year-block {
-      display: grid;
-      grid-template-columns: 100px 1fr;
-      gap: 24px;
-      padding: 20px 0;
-      border-bottom: 1px solid var(--border);
-      align-items: start;
-    }
-    .track-year-block:first-child { border-top: 1px solid var(--border); }
-    .track-year {
-      font-family: var(--ff-display);
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--fade);
-      padding-top: 4px;
-    }
-    .track-admits { display: flex; flex-wrap: wrap; gap: 8px; }
-    .admit-tag {
-      font-size: 0.78rem;
-      letter-spacing: 0.04em;
-      padding: 4px 10px;
-      border: 1px solid var(--border);
-      color: var(--pencil);
-      background: white;
-    }
-    .admit-tag--scholarship {
-      border-color: var(--kraft);
-      color: var(--ink);
-      font-weight: 500;
-    }
-    .track-footnote {
-      font-size: 0.72rem;
-      color: var(--fade);
-      margin-top: 20px;
-      letter-spacing: 0.03em;
-    }
-
-    /* === PACKAGES === */
-    .packages { background: white; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .packages h2 { margin-bottom: 48px; }
-    .packages-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-bottom: 20px;
-    }
-    .pkg-card {
-      border: 1.5px solid var(--border);
-      padding: 36px 28px;
-      position: relative;
-      background: var(--paper);
-    }
-    .pkg-card:nth-child(1) { transform: rotate(-0.3deg); }
-    .pkg-card:nth-child(2) { transform: rotate(0.2deg); }
-    .pkg-card:nth-child(3) { transform: rotate(-0.4deg); }
-    .pkg-card--featured {
-      border-color: var(--ink);
-      border-width: 2px;
-      background: white;
-    }
-    .pkg-badge {
-      font-size: 0.68rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: white;
-      background: var(--ink);
-      padding: 3px 8px;
-      display: inline-block;
-      margin-bottom: 16px;
-    }
-    .pkg-name {
-      font-family: var(--ff-display);
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: var(--ink);
-      margin-bottom: 8px;
-    }
-    .pkg-price {
-      font-family: var(--ff-display);
-      font-size: 2.4rem;
-      font-weight: 700;
-      color: var(--ink);
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-    .pkg-scope {
-      font-size: 0.8rem;
-      color: var(--fade);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid var(--border);
-    }
-    .pkg-features {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .pkg-features li {
-      font-size: 0.88rem;
-      color: var(--pencil);
-      padding-left: 16px;
-      position: relative;
-      line-height: 1.5;
-    }
-    .pkg-features li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: var(--kraft);
-    }
-    .pkg-footnote {
-      font-size: 0.78rem;
-      color: var(--fade);
-      margin-bottom: 48px;
-    }
-    .roi-block {
-      border: 1.5px solid var(--border);
-      padding: 36px 40px;
-      background: var(--paper);
-      position: relative;
-    }
-    .roi-block::before {
-      content: '\201C';
-      position: absolute;
-      top: -16px;
-      left: 32px;
-      font-family: var(--ff-display);
-      font-size: 5rem;
-      color: var(--kraft);
-      line-height: 1;
-      background: var(--paper);
-      padding: 0 8px;
-    }
-    .roi-quote {
-      font-family: var(--ff-display);
-      font-size: 1.05rem;
-      line-height: 1.75;
-      color: var(--ink);
-      font-style: italic;
     }
 
     /* === TESTIMONIALS === */
@@ -780,6 +676,11 @@
     @media (max-width: 640px) {
       :root { --section-pad: 64px 24px; }
 
+      /* Stats strip */
+      .stats-strip { grid-template-columns: repeat(2, 1fr); }
+      .stat-item { padding: 32px 16px; }
+      .stat-n { font-size: 2.2rem; }
+
       /* Nav */
       .nav { padding: 16px 24px; }
       .nav-links { gap: 16px; }
@@ -850,8 +751,8 @@
     <ul class="nav-links">
       <li><a href="#about-letter">About</a></li>
       <li><a href="#roadmap">Process</a></li>
-      <li><a href="#packages">Packages</a></li>
       <li><a href="#testimonials">Results</a></li>
+      <li><a href="#faq">FAQ</a></li>
     </ul>
   </nav>
 
@@ -878,6 +779,26 @@
       </div>
     </div>
   </section>
+
+  <!-- ✦ STATS STRIP ✦ -->
+  <div class="stats-strip" aria-label="Key statistics">
+    <div class="stat-item">
+      <span class="stat-n">30+</span>
+      <span class="stat-l">M7 Admits</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-n">80%</span>
+      <span class="stat-l">Received Scholarships</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-n">~10</span>
+      <span class="stat-l">Students Per Year</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-n">6</span>
+      <span class="stat-l">Years Running</span>
+    </div>
+  </div>
 
   <section class="about" id="about-letter">
   <div class="container">
@@ -996,9 +917,15 @@
 </section>
 
   <section class="roadmap" id="roadmap">
+    <!-- paper plane background decoration -->
+    <svg class="roadmap-plane" viewBox="0 0 320 260" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M 8 130 L 312 12 L 248 130 L 312 248 Z" fill="#1A1A1A"/>
+      <path d="M 312 12 L 138 138 L 168 196" stroke="#1A1A1A" stroke-width="3" fill="none"/>
+      <path d="M 248 130 L 138 138 L 168 196 L 248 130 Z" fill="#4A4A4A"/>
+    </svg>
   <div class="container">
     <p class="section-label">The Process</p>
-    <h2>The MBA Roadmap</h2>
+    <h2>Your MBA Roadmap</h2>
     <p class="roadmap-intro">Ten steps from where you are now to where you want to be.</p>
 
     <div class="timeline">
@@ -1084,129 +1011,6 @@
       </div>
 
     </div>
-  </div>
-</section>
-
-<section class="track-record" id="track-record">
-  <div class="container">
-    <p class="section-label">Results</p>
-    <h2>Track Record</h2>
-    <p class="track-intro">30+ admits across HBS, Stanford GSB, Wharton, and every M7 program since 2020. Over 80% received merit scholarships.</p>
-
-    <div class="track-table">
-      <div class="track-year-block">
-        <div class="track-year">2024–25</div>
-        <div class="track-admits">
-          <span class="admit-tag">HBS</span>
-          <span class="admit-tag">Stanford GSB</span>
-          <span class="admit-tag admit-tag--scholarship">Wharton $$$</span>
-          <span class="admit-tag admit-tag--scholarship">Kellogg $$$</span>
-          <span class="admit-tag">MIT Sloan</span>
-          <span class="admit-tag admit-tag--scholarship">CBS $$$</span>
-        </div>
-      </div>
-      <div class="track-year-block">
-        <div class="track-year">2023–24</div>
-        <div class="track-admits">
-          <span class="admit-tag">HBS</span>
-          <span class="admit-tag admit-tag--scholarship">Stanford GSB $$$</span>
-          <span class="admit-tag">Wharton</span>
-          <span class="admit-tag admit-tag--scholarship">Booth $$$</span>
-          <span class="admit-tag admit-tag--scholarship">Yale SOM $$$</span>
-          <span class="admit-tag admit-tag--scholarship">HaaS $$$</span>
-        </div>
-      </div>
-      <div class="track-year-block">
-        <div class="track-year">2022–23</div>
-        <div class="track-admits">
-          <span class="admit-tag">HBS</span>
-          <span class="admit-tag">Wharton</span>
-          <span class="admit-tag admit-tag--scholarship">MIT Sloan $$$</span>
-          <span class="admit-tag admit-tag--scholarship">CBS $$$</span>
-          <span class="admit-tag admit-tag--scholarship">Kellogg $$$</span>
-        </div>
-      </div>
-      <div class="track-year-block">
-        <div class="track-year">2021–22</div>
-        <div class="track-admits">
-          <span class="admit-tag">Stanford GSB</span>
-          <span class="admit-tag">HBS</span>
-          <span class="admit-tag admit-tag--scholarship">Wharton $$$</span>
-          <span class="admit-tag admit-tag--scholarship">Booth $$$</span>
-        </div>
-      </div>
-      <div class="track-year-block">
-        <div class="track-year">2020–21</div>
-        <div class="track-admits">
-          <span class="admit-tag">HBS</span>
-          <span class="admit-tag admit-tag--scholarship">Wharton $$$</span>
-          <span class="admit-tag admit-tag--scholarship">MIT Sloan $$$</span>
-        </div>
-      </div>
-    </div>
-
-    <p class="track-footnote">$$$ = merit scholarship received · School names shown, not student names, to protect confidentiality</p>
-  </div>
-</section>
-
-<section class="packages" id="packages">
-  <div class="container">
-    <p class="section-label">Investment</p>
-    <h2>Packages</h2>
-
-    <div class="packages-grid">
-
-      <div class="pkg-card">
-        <div class="pkg-name">Core</div>
-        <div class="pkg-scope">Up to 3 schools</div>
-        <ul class="pkg-features">
-          <li>Strategy &amp; school selection</li>
-          <li>Résumé review</li>
-          <li>Recommender guidance</li>
-          <li>Unlimited essay edits</li>
-          <li>Superpower Exercise</li>
-          <li>Application form review</li>
-          <li>Pre-submission committee review</li>
-          <li>2 mock interviews per school</li>
-          <li>24-hr turnaround on feedback</li>
-          <li>Scholarship negotiation</li>
-          <li>Project management software</li>
-          <li>Waitlist strategy</li>
-          <li>Lisa's coaching team access</li>
-        </ul>
-      </div>
-
-      <div class="pkg-card pkg-card--featured">
-        <div class="pkg-badge">Most Popular</div>
-        <div class="pkg-name">Premium</div>
-        <div class="pkg-scope">Up to 5 schools</div>
-        <ul class="pkg-features">
-          <li>Everything in Core</li>
-          <li>2 additional schools</li>
-          <li>Priority scheduling</li>
-          <li>Extended interview prep</li>
-        </ul>
-      </div>
-
-      <div class="pkg-card">
-        <div class="pkg-name">All-In</div>
-        <div class="pkg-scope">Unlimited schools</div>
-        <ul class="pkg-features">
-          <li>Everything in Premium</li>
-          <li>Unlimited school applications</li>
-          <li>Deepest level of support</li>
-          <li>Maximum flexibility</li>
-        </ul>
-      </div>
-
-    </div>
-
-    <p class="pkg-footnote">Pricing shared upon inquiry. Packages tailored to fit your school list and timeline.</p>
-
-    <div class="roi-block">
-      <p class="roi-quote">"Getting an MBA is expensive — $250,000+ when you factor in tuition and opportunity cost. The question isn't whether coaching is expensive. It's whether the ROI makes sense. One scholarship negotiation can return 3–5x your coaching investment. One right school can change the trajectory of your career."</p>
-    </div>
-
   </div>
 </section>
 
@@ -1313,16 +1117,9 @@
     <div class="faq-list">
 
       <details class="faq-item">
-        <summary class="faq-question">How does the hour cap work?</summary>
+        <summary class="faq-question">When should I start working with a coach?</summary>
         <div class="faq-answer">
-          <p>Each package includes a set number of hours — but we don't count hours the way most consultants do. We count hours spent in active sessions together, not your time drafting or thinking between sessions. In practice, most clients use every hour available and tell us they wish they had more.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary class="faq-question">How do you calculate hours spent?</summary>
-        <div class="faq-answer">
-          <p>We log time from the moment a session starts to when it ends — calls, feedback reviews, and working sessions all count. Async messages and quick clarifications don't. You'll always know how many hours remain, and we'll flag if you're running low so you can plan accordingly.</p>
+          <p>Ideally, your first semester of college. There's a lot of intentional planning that goes into the deferred MBA process — especially if you're targeting HBS, Stanford GSB, or Wharton. What most candidates don't realize is that by the time they're ready to apply, it's already kind of late. They haven't been thoughtful about academic planning or career choices, so the whole process becomes backward: trying to fit what admissions committees want, rather than building a story around what you actually want. Starting early fixes that. You get to be intentional — not reactive.</p>
         </div>
       </details>
 
