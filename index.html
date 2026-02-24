@@ -360,9 +360,17 @@
       border-right: 1px solid var(--border);
     }
     .stat-item:last-child { border-right: none; }
-    .stat-n--secondary {
-      color: var(--pencil);
-      font-size: 1.6rem;
+    .stat-combined {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+    .stat-slash {
+      font-family: var(--ff-display);
+      font-size: 1.8rem;
+      color: var(--border);
+      font-weight: 400;
+      line-height: 1;
     }
     .stat-n {
       font-family: var(--ff-display);
@@ -811,8 +819,7 @@
   <!-- ✦ STATS STRIP ✦ -->
   <div class="stats-strip" aria-label="Key statistics">
     <div class="stat-item">
-      <span class="stat-n">95%</span>
-      <span class="stat-n stat-n--secondary">30+</span>
+      <span class="stat-combined"><span class="stat-n">95%</span><span class="stat-slash">/</span><span class="stat-n">30+</span></span>
       <span class="stat-l">Clients Admitted to M7 Programs</span>
     </div>
     <div class="stat-item">
