@@ -249,25 +249,64 @@
       line-height: 1.75;
       margin-bottom: 48px;
     }
-    .myth-bust { margin-bottom: 56px; }
-    .myth-label {
-      font-size: 0.8rem;
-      letter-spacing: 0.1em;
+    .myth-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+    .myth-card {
+      background: white;
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .myth-top {
+      background: #f5f4f1;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .myth-badge {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--fade);
-      margin-bottom: 16px;
+      display: block;
+      margin-bottom: 6px;
     }
-    .myth-list {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px 24px;
-    }
-    .myth-list li {
+    .myth-text {
+      font-family: var(--ff-display);
       font-size: 1rem;
       color: var(--fade);
+      text-decoration: line-through;
+      text-decoration-color: var(--kraft);
+      text-decoration-thickness: 2px;
+      line-height: 1.4;
+      margin: 0;
     }
-    .myth-list s { text-decoration-color: var(--kraft); text-decoration-thickness: 2px; }
+    .myth-bottom { padding: 20px 24px; }
+    .reality-badge {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--kraft);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .myth-bottom p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--pencil);
+      margin: 0;
+    }
+    .pledge-section { margin-top: 0; }
+    .pledge-intro {
+      font-family: var(--ff-display);
+      font-size: 1.15rem;
+      color: var(--ink);
+      margin-bottom: 24px;
+    }
     .pledge-cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -770,6 +809,7 @@
       .about-inner { grid-template-columns: 1fr; gap: 24px; }
 
       /* Who */
+      .myth-grid { grid-template-columns: 1fr; }
       .pledge-cards { grid-template-columns: 1fr; }
       .pledge-card:nth-child(1),
       .pledge-card:nth-child(2),
@@ -895,33 +935,71 @@
 
   <section class="who" id="who">
   <div class="container">
-    <p class="section-label">Ideal Fit</p>
-    <h2>Who We're Looking For</h2>
-    <p class="who-intro">One of the biggest myths about getting into a top US business school is that you need perfect credentials. You don't. You need a compelling story.</p>
-    
-    <div class="myth-bust">
-      <p class="myth-label">We don't require any of this:</p>
-      <ul class="myth-list">
-        <li><s>GMAT 750+</s></li>
-        <li><s>GPA 3.9+</s></li>
-        <li><s>McKinsey / Goldman pedigree</s></li>
-        <li><s>Ivy League undergrad</s></li>
-        <li><s>A "prestige" career path</s></li>
-      </ul>
+    <p class="section-label">The Reality Check</p>
+    <h2>Who Gets In Might Surprise You</h2>
+    <p class="who-intro">The biggest myth in MBA admissions: that you need a perfect resume. The candidates who surprise committees most aren't the highest scorers. They're the ones with the clearest stories.</p>
+
+    <div class="myth-grid">
+      <div class="myth-card">
+        <div class="myth-top">
+          <span class="myth-badge">Myth</span>
+          <p class="myth-text">You need a GMAT 750+ or GPA 3.9+</p>
+        </div>
+        <div class="myth-bottom">
+          <span class="reality-badge">Reality</span>
+          <p>Above a certain threshold, scores all look the same. Marginal utility declines fast. What separates admits from rejects isn't 20 points on a test — it's how clearly you can answer: <em>why you, why MBA, why now?</em></p>
+        </div>
+      </div>
+
+      <div class="myth-card">
+        <div class="myth-top">
+          <span class="myth-badge">Myth</span>
+          <p class="myth-text">You need a McKinsey or Goldman pedigree</p>
+        </div>
+        <div class="myth-bottom">
+          <span class="reality-badge">Reality</span>
+          <p>A two-year finance analyst — from one of the most overrepresented applicant pools — got into Stanford GSB. Not because of the brand, but because of the narrative precision. The pedigree doesn't close deals. The story does.</p>
+        </div>
+      </div>
+
+      <div class="myth-card">
+        <div class="myth-top">
+          <span class="myth-badge">Myth</span>
+          <p class="myth-text">You need an Ivy League undergrad</p>
+        </div>
+        <div class="myth-bottom">
+          <span class="reality-badge">Reality</span>
+          <p>A community college graduate is now an MIT Sloan MBA. Committees want to know what you did with what you had — not whose name is on your diploma.</p>
+        </div>
+      </div>
+
+      <div class="myth-card">
+        <div class="myth-top">
+          <span class="myth-badge">Myth</span>
+          <p class="myth-text">You need a recognizable employer</p>
+        </div>
+        <div class="myth-bottom">
+          <span class="reality-badge">Reality</span>
+          <p>Candidates from companies HBS had never heard of have earned HBS admits. What they had wasn't a famous logo — it was a story of leadership, impact, and clear direction.</p>
+        </div>
+      </div>
     </div>
 
-    <div class="pledge-cards">
-      <div class="pledge-card">
-        <div class="pledge-number">01</div>
-        <p>You're ready to do the <strong>hard introspective work</strong> to find your authentic story — not just list your accomplishments.</p>
-      </div>
-      <div class="pledge-card">
-        <div class="pledge-number">02</div>
-        <p>You want a <strong>mentor, not a ghostwriter</strong>. You're committed to owning every word of your application.</p>
-      </div>
-      <div class="pledge-card">
-        <div class="pledge-number">03</div>
-        <p>You're applying because an MBA is the <strong>right next chapter</strong> in your story — not because everyone else is doing it.</p>
+    <div class="pledge-section">
+      <p class="pledge-intro">What we <em>do</em> look for:</p>
+      <div class="pledge-cards">
+        <div class="pledge-card">
+          <div class="pledge-number">01</div>
+          <p>You're ready to do the <strong>hard introspective work</strong> to find your authentic story — not just list your accomplishments.</p>
+        </div>
+        <div class="pledge-card">
+          <div class="pledge-number">02</div>
+          <p>You want a <strong>mentor, not a ghostwriter</strong>. You're committed to owning every word of your application.</p>
+        </div>
+        <div class="pledge-card">
+          <div class="pledge-number">03</div>
+          <p>You're applying because an MBA is the <strong>right next chapter</strong> in your story — not because everyone else is doing it.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -934,6 +1012,13 @@
     <p class="diff-intro">Eight things we do differently — and why they matter.</p>
 
     <div class="diff-grid">
+
+      <div class="diff-card">
+        <!-- Globe / East-West: compass or world -->
+        <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+        <h3>We've Actually Lived Your Dream</h3>
+        <p>As an HBS MBA who has worked and lived across Asia and the United States, Lisa understands something most coaches don't: the cultural gap in MBA storytelling. Many of her clients are Chinese and Asian-background candidates — accomplished people who struggle not with what they've done, but with how to tell it for an American audience. Lisa has navigated that gap herself. She helps you translate your identity — not sanitize it.</p>
+      </div>
 
       <div class="diff-card">
         <!-- Superpower: lightning bolt / spark -->
@@ -984,12 +1069,6 @@
         <p>Lisa is supported by a team of HBS and M7 graduates with deep expertise across industries and MBA programs. Their network becomes yours. When you need a connection, a reference, or an insider perspective on a program, we make the introduction.</p>
       </div>
 
-      <div class="diff-card">
-        <!-- Globe / East-West: compass or world -->
-        <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
-        <h3>Fluent in Your Story — and Your Culture</h3>
-        <p>As an HBS MBA who has worked and lived across Asia and the United States, Lisa understands something most coaches don't: the cultural gap in MBA storytelling. Many of her clients are Chinese and Asian-background candidates — accomplished people who struggle not with what they've done, but with how to tell it for an American audience. Lisa has navigated that gap herself. She helps you translate your identity — not sanitize it.</p>
-      </div>
 
     </div>
 
