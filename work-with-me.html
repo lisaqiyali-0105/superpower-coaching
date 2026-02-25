@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work With Me | Superpower Coaching</title>
+  <meta name="description" content="Three ways to work with Lisa — hourly coaching, full package, or interview prep." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --paper: #FAFAF8;
+      --ink: #1A1A1A;
+      --pencil: #4A4A4A;
+      --fade: #6B6B6B;
+      --kraft: #C4A77D;
+      --border: #D4CFC8;
+      --ff-display: 'Playfair Display', Georgia, serif;
+      --ff-body: 'Inter', system-ui, sans-serif;
+      --max-w: 1100px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--ff-body);
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--pencil);
+      background-color: var(--paper);
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    h1, h2, h3, h4 { font-family: var(--ff-display); color: var(--ink); line-height: 1.2; }
+    h1 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; }
+    h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 600; }
+    h3 { font-size: 1.2rem; font-weight: 600; }
+    p { color: var(--pencil); line-height: 1.7; }
+    a { color: inherit; text-decoration: none; }
+
+    .container { max-width: var(--max-w); margin: 0 auto; }
+
+    .section-label {
+      font-family: var(--ff-body);
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--fade);
+      margin-bottom: 16px;
+    }
+
+    /* === NAV === */
+    .nav {
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 48px;
+      background: var(--paper);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+    }
+    .nav-logo {
+      font-family: var(--ff-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .nav-back {
+      font-size: 0.82rem;
+      color: var(--pencil);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 200ms ease;
+      cursor: pointer;
+    }
+    .nav-back:hover { color: var(--ink); }
+
+    /* === HERO === */
+    .page-hero {
+      padding: 80px 48px 64px;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero h1 { margin-bottom: 16px; }
+    .page-hero-sub {
+      font-size: 1.05rem;
+      color: var(--pencil);
+      max-width: 560px;
+      line-height: 1.75;
+    }
+    .brand-word { color: var(--kraft); font-style: italic; }
+
+    /* === PRICING SECTION === */
+    .pricing-section {
+      padding: 80px 48px;
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .pricing-section + .pricing-section {
+      border-top: 1px solid var(--border);
+      padding-top: 72px;
+    }
+    .pricing-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    .pricing-number {
+      font-family: var(--ff-display);
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--border);
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: -4px;
+    }
+    .pricing-header-text h2 { margin-bottom: 8px; }
+    .pricing-header-text p {
+      font-size: 1rem;
+      color: var(--pencil);
+      max-width: 560px;
+      line-height: 1.75;
+    }
+
+    /* === OPTION 1: HOURLY === */
+    .hourly-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .hourly-card {
+      border: 1.5px solid var(--ink);
+      padding: 36px 32px;
+      background: white;
+      position: relative;
+    }
+    .hourly-card--featured {
+      background: var(--ink);
+      color: white;
+    }
+    .hourly-card:nth-child(1) { transform: rotate(-0.3deg); }
+    .hourly-card:nth-child(2) { transform: rotate(0.3deg); }
+    .hourly-tag {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--fade);
+      margin-bottom: 20px;
+      display: block;
+    }
+    .hourly-card--featured .hourly-tag { color: rgba(255,255,255,0.5); }
+    .hourly-price {
+      font-family: var(--ff-display);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .hourly-card--featured .hourly-price { color: white; }
+    .hourly-price-sub {
+      font-size: 0.82rem;
+      color: var(--fade);
+      margin-bottom: 24px;
+    }
+    .hourly-card--featured .hourly-price-sub { color: rgba(255,255,255,0.55); }
+    .hourly-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+      color: var(--ink);
+    }
+    .hourly-card--featured h3 { color: white; }
+    .hourly-card p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--pencil);
+    }
+    .hourly-card--featured p { color: rgba(255,255,255,0.75); }
+    .savings-badge {
+      display: inline-block;
+      background: var(--kraft);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      margin-bottom: 20px;
+    }
+
+    /* === OPTION 2: FULL PACKAGE === */
+    .package-card {
+      border: 1.5px solid var(--border);
+      padding: 48px 40px;
+      background: white;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .package-includes {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .package-includes li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.92rem;
+      color: var(--pencil);
+      line-height: 1.6;
+    }
+    .package-includes li::before {
+      content: '—';
+      color: var(--kraft);
+      flex-shrink: 0;
+      font-weight: 600;
+    }
+    .package-cta-side {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding-top: 8px;
+    }
+    .package-price-label {
+      font-family: var(--ff-display);
+      font-size: 1.5rem;
+      font-style: italic;
+      color: var(--ink);
+    }
+    .package-price-note {
+      font-size: 0.85rem;
+      color: var(--fade);
+      line-height: 1.6;
+    }
+
+    /* === OPTION 3: INTERVIEW PREP === */
+    .interview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .interview-card {
+      border: 1.5px solid var(--border);
+      padding: 32px 28px;
+      background: white;
+      position: relative;
+    }
+    .interview-card:nth-child(1) { transform: rotate(-0.4deg); border-color: var(--ink); }
+    .interview-card:nth-child(2) { transform: rotate(0.3deg); }
+    .interview-card:nth-child(3) { transform: rotate(-0.3deg); }
+    .school-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--fade);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .school-name {
+      font-family: var(--ff-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+    .school-price {
+      font-family: var(--ff-display);
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--kraft);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .school-includes {
+      font-size: 0.88rem;
+      color: var(--pencil);
+      line-height: 1.7;
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+      margin-top: 4px;
+    }
+    .interview-note {
+      margin-top: 28px;
+      font-size: 0.88rem;
+      color: var(--fade);
+      line-height: 1.7;
+      max-width: 560px;
+    }
+
+    /* === CTA BUTTON === */
+    .cta-btn {
+      display: inline-block;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink);
+      background: var(--kraft);
+      padding: 14px 28px;
+      cursor: pointer;
+      border: none;
+      font-family: var(--ff-body);
+      transition: opacity 200ms ease;
+    }
+    .cta-btn:hover { opacity: 0.88; }
+    .cta-btn--dark {
+      background: var(--ink);
+      color: white;
+    }
+
+    /* === CONTACT MODAL === */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(26,26,26,0.55);
+      z-index: 500;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: var(--paper);
+      border: 1.5px solid var(--ink);
+      padding: 48px 40px;
+      max-width: 420px;
+      width: 90%;
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      font-size: 1.2rem;
+      color: var(--fade);
+      background: none;
+      border: none;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .modal-close:hover { color: var(--ink); }
+    .modal h3 { font-family: var(--ff-display); font-size: 1.4rem; margin-bottom: 8px; }
+    .modal-sub { font-size: 0.88rem; color: var(--pencil); margin-bottom: 32px; line-height: 1.6; }
+    .modal-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .modal-contact-item:first-of-type { border-top: 1px solid var(--border); }
+    .modal-contact-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--fade);
+      min-width: 56px;
+    }
+    .modal-contact-value {
+      font-family: var(--ff-display);
+      font-size: 1rem;
+      color: var(--ink);
+    }
+    .modal-contact-value a {
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--kraft);
+    }
+    .modal-contact-value a:hover { color: var(--kraft); }
+
+    /* === FOOTER === */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 48px;
+      background: var(--paper);
+      text-align: center;
+    }
+    .footer-copy { font-size: 0.75rem; color: var(--fade); }
+
+    /* === MOBILE === */
+    @media (max-width: 640px) {
+      .nav { padding: 16px 24px; flex-direction: column; gap: 12px; }
+      .page-hero { padding: 48px 24px 48px; }
+      .pricing-section { padding: 56px 24px; }
+      .hourly-grid { grid-template-columns: 1fr; }
+      .hourly-card:nth-child(1), .hourly-card:nth-child(2) { transform: none; }
+      .package-card { grid-template-columns: 1fr; gap: 32px; padding: 32px 24px; }
+      .interview-grid { grid-template-columns: 1fr; }
+      .interview-card:nth-child(1), .interview-card:nth-child(2), .interview-card:nth-child(3) { transform: none; }
+      .footer { padding: 32px 24px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✦ NAV ✦ -->
+  <nav class="nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">Superpower Coaching</a>
+    <a href="index.html" class="nav-back">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      Back to main site
+    </a>
+  </nav>
+
+  <!-- ✦ PAGE HERO ✦ -->
+  <div class="page-hero">
+    <p class="section-label">Pricing &amp; Offerings</p>
+    <h1>Three ways to work with <em class="brand-word">us</em>.</h1>
+    <p class="page-hero-sub">Whether you're exploring MBA options, ready to go all-in, or just landed an interview invite — there's a way to work together that fits where you are.</p>
+  </div>
+
+  <!-- ✦ OPTION 1: HOURLY ✦ -->
+  <div class="pricing-section">
+    <div class="pricing-header">
+      <span class="pricing-number">01</span>
+      <div class="pricing-header-text">
+        <h2>Hourly Career Coaching</h2>
+        <p>Pay-as-you-go coaching sessions for candidates who want strategic guidance without a full commitment. Ideal for early exploration, story development, or targeted advice on a specific challenge.</p>
+      </div>
+    </div>
+
+    <div class="hourly-grid">
+      <div class="hourly-card">
+        <span class="hourly-tag">Single Session</span>
+        <div class="hourly-price">$300</div>
+        <div class="hourly-price-sub">per hour</div>
+        <h3>First-Time Coaching</h3>
+        <p>One focused session to diagnose where you are, identify your story's strongest angles, and leave with a clear next step. No long-term commitment required.</p>
+        <br>
+        <button class="cta-btn" onclick="document.getElementById('contactModal').classList.add('open')">Book a Session →</button>
+      </div>
+
+      <div class="hourly-card hourly-card--featured">
+        <span class="savings-badge">Save 20%</span>
+        <span class="hourly-tag">5-Session Pack</span>
+        <div class="hourly-price">$1,200</div>
+        <div class="hourly-price-sub">$240 / session · billed upfront</div>
+        <h3>Committed Coaching</h3>
+        <p>Five sessions to go deeper — on your narrative, your school list, your essays, or all of the above. Best for candidates who want recurring, high-touch guidance over several weeks.</p>
+        <br>
+        <button class="cta-btn" onclick="document.getElementById('contactModal').classList.add('open')">Book a Pack →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✦ OPTION 2: FULL PACKAGE ✦ -->
+  <div class="pricing-section">
+    <div class="pricing-header">
+      <span class="pricing-number">02</span>
+      <div class="pricing-header-text">
+        <h2>Full Package Coaching</h2>
+        <p>The all-in model. From Superpower Exercise to scholarship negotiation, we're with you every step of the way — and beyond, with post-admissions career coaching included.</p>
+      </div>
+    </div>
+
+    <div class="package-card">
+      <ul class="package-includes">
+        <li>Superpower Exercise &amp; narrative strategy</li>
+        <li>Profile enhancement planning</li>
+        <li>School list development &amp; program research</li>
+        <li>Résumé rewrite for MBA audience</li>
+        <li>Recommender strategy &amp; briefing</li>
+        <li>Unlimited essay edits till perfection</li>
+        <li>Full application form review</li>
+        <li>Mock interviews (per-school format)</li>
+        <li>Offer &amp; scholarship negotiation strategy</li>
+        <li>Post-admissions career coaching sessions</li>
+        <li>Access to the Superpower Coaching network for life</li>
+      </ul>
+
+      <div class="package-cta-side">
+        <p class="package-price-label">Pricing shared upon inquiry</p>
+        <p class="package-price-note">We work with 5–8 students per year. Fit is mutual — reach out and let's find out if we're the right match for each other.</p>
+        <button class="cta-btn cta-btn--dark" onclick="document.getElementById('contactModal').classList.add('open')">Get in Touch →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✦ OPTION 3: INTERVIEW PREP ✦ -->
+  <div class="pricing-section">
+    <div class="pricing-header">
+      <span class="pricing-number">03</span>
+      <div class="pricing-header-text">
+        <h2>MBA Interview Prep</h2>
+        <p>You've already earned the interview invite. Now let's make sure you walk in ready. We offer focused mock interview sessions calibrated to each school's specific format — priced per school.</p>
+      </div>
+    </div>
+
+    <div class="interview-grid">
+      <div class="interview-card">
+        <span class="school-label">Top Choice</span>
+        <div class="school-name">Harvard Business School</div>
+        <div class="school-price">$700</div>
+        <p class="school-includes">HBS case-method interview simulation + full debrief. We prepare you for the specific pressure, pacing, and style of the HBS admissions interview.</p>
+        <br>
+        <button class="cta-btn" onclick="document.getElementById('contactModal').classList.add('open')">Book HBS Prep →</button>
+      </div>
+
+      <div class="interview-card">
+        <span class="school-label">Top Choice</span>
+        <div class="school-name">Stanford GSB</div>
+        <div class="school-price">$500</div>
+        <p class="school-includes">GSB values-based interview simulation + full debrief. Focused on authenticity, self-reflection, and the "what matters most to you" framing GSB is known for.</p>
+        <br>
+        <button class="cta-btn" onclick="document.getElementById('contactModal').classList.add('open')">Book GSB Prep →</button>
+      </div>
+
+      <div class="interview-card">
+        <span class="school-label">All Other Programs</span>
+        <div class="school-name">Wharton, Booth, Kellogg &amp; More</div>
+        <div class="school-price">$300</div>
+        <p class="school-includes">Per-school mock interview calibrated to the program's format + debrief. Covers Wharton TBD, Kellogg MMI, Sloan behavioral, and all other M7 and top-15 programs.</p>
+        <br>
+        <button class="cta-btn" onclick="document.getElementById('contactModal').classList.add('open')">Book Interview Prep →</button>
+      </div>
+    </div>
+
+    <p class="interview-note">All interview prep sessions include a full debrief: what landed, what to sharpen, and how to carry your story confidently into the room.</p>
+  </div>
+
+  <!-- ✦ FOOTER ✦ -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-copy">&copy; 2026 Superpower Coaching. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ✦ CONTACT MODAL ✦ -->
+  <div class="modal-overlay" id="contactModal" onclick="if(event.target===this)this.classList.remove('open')">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" onclick="document.getElementById('contactModal').classList.remove('open')" aria-label="Close">✕</button>
+      <h3 id="modalTitle">Let's Connect</h3>
+      <p class="modal-sub">Reach out directly — I'd love to hear about where you are in your MBA journey.</p>
+      <div class="modal-contact-item">
+        <span class="modal-contact-label">Email</span>
+        <span class="modal-contact-value"><a href="mailto:lisaqiyali@gmail.com">lisaqiyali@gmail.com</a></span>
+      </div>
+      <div class="modal-contact-item">
+        <span class="modal-contact-label">WeChat</span>
+        <span class="modal-contact-value">LisaQiyaLi</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
