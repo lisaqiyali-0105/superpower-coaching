@@ -178,8 +178,16 @@
     }
     .hero-photo-wrap {
       display: flex;
+      flex-direction: column;
       justify-content: center;
-      align-items: flex-start;
+      align-items: center;
+    }
+    .hero-photo-caption {
+      font-size: 0.78rem;
+      color: var(--fade);
+      text-align: center;
+      margin-top: 12px;
+      letter-spacing: 0.02em;
     }
     .hero-photo {
       width: 320px;
@@ -892,6 +900,7 @@
       <div class="hero-photo-placeholder" style="display:none;">
         Photo<br>Coming Soon
       </div>
+      <p class="hero-photo-caption">Founder &amp; Lead Coach, Superpower Coaching</p>
     </div>
   </section>
 
