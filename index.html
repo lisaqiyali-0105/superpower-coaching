@@ -699,6 +699,75 @@
     }
     .cta-btn:hover { opacity: 0.88; }
 
+    /* === CONTACT MODAL === */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(26,26,26,0.55);
+      z-index: 500;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: var(--paper);
+      border: 1.5px solid var(--ink);
+      padding: 48px 40px;
+      max-width: 420px;
+      width: 90%;
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      font-size: 1.2rem;
+      color: var(--fade);
+      background: none;
+      border: none;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .modal-close:hover { color: var(--ink); }
+    .modal h3 {
+      font-family: var(--ff-display);
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+    .modal-sub {
+      font-size: 0.88rem;
+      color: var(--pencil);
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+    .modal-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .modal-contact-item:first-of-type { border-top: 1px solid var(--border); }
+    .modal-contact-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--fade);
+      min-width: 56px;
+    }
+    .modal-contact-value {
+      font-family: var(--ff-display);
+      font-size: 1rem;
+      color: var(--ink);
+    }
+    .modal-contact-value a {
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--kraft);
+    }
+    .modal-contact-value a:hover { color: var(--kraft); }
+
     /* === FAQ === */
     .faq { border-top: 1px solid var(--border); }
     .faq h2 { margin-bottom: 48px; }
@@ -1291,7 +1360,7 @@
       <p class="section-label">Get Started</p>
       <h2>Ready to find your <em class="brand-word">superpower</em>?</h2>
       <p class="cta-sub">We take on 5–8 students per year. Start with a free, no-commitment intro call — it's the best way to see if we're a good fit.</p>
-      <a href="mailto:lisa@superpowercoaching.com" class="cta-btn">Book a Free Intro Call →</a>
+      <button class="cta-btn" onclick="document.getElementById('contactModal').classList.add('open')">Book a Free Intro Call →</button>
     </div>
   </div>
 </section>
@@ -1382,6 +1451,22 @@
     <p class="footer-copy">&copy; 2026 Superpower Coaching. All rights reserved.</p>
   </div>
 </footer>
+
+<div class="modal-overlay" id="contactModal" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" onclick="document.getElementById('contactModal').classList.remove('open')" aria-label="Close">✕</button>
+    <h3 id="modalTitle">Let's Connect</h3>
+    <p class="modal-sub">Reach out directly — I'd love to hear about where you are in your MBA journey.</p>
+    <div class="modal-contact-item">
+      <span class="modal-contact-label">Email</span>
+      <span class="modal-contact-value"><a href="mailto:lisaqiyali@gmail.com">lisaqiyali@gmail.com</a></span>
+    </div>
+    <div class="modal-contact-item">
+      <span class="modal-contact-label">WeChat</span>
+      <span class="modal-contact-value">373885218</span>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
