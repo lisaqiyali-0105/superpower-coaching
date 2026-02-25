@@ -25,7 +25,7 @@
       --paper: #FAFAF8;
       --ink: #1A1A1A;
       --pencil: #4A4A4A;
-      --fade: #8A8A8A;
+      --fade: #6B6B6B;
       --kraft: #C4A77D;
       --border: #D4CFC8;
       --ff-display: 'Playfair Display', Georgia, serif;
@@ -108,6 +108,7 @@
       letter-spacing: 0.06em;
       text-transform: uppercase;
       cursor: pointer;
+      transition: color 200ms ease;
     }
     .nav-links a:hover { color: var(--ink); }
 
@@ -125,6 +126,7 @@
       font-size: 0.78rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
+      color: var(--pencil);
       color: var(--kraft);
       margin-bottom: 20px;
       font-weight: 500;
@@ -160,10 +162,10 @@
       font-style: normal;
     }
     .hero-roles-close {
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--fade);
+      color: var(--pencil);
       margin-top: 14px;
       padding-left: 22px;
     }
@@ -380,10 +382,10 @@
       line-height: 1;
     }
     .stat-l {
-      font-size: 0.72rem;
+      font-size: 0.78rem;
       color: var(--fade);
       text-align: center;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
     }
     /* === MBA ROADMAP === */
@@ -515,6 +517,7 @@
       font-size: 0.95rem;
       line-height: 1.75;
       color: var(--pencil);
+      max-width: 65ch;
       margin-bottom: 24px;
       font-style: italic;
     }
@@ -570,7 +573,7 @@
     .testi-enrolled {
       font-size: 0.72rem;
       font-weight: 600;
-      color: var(--kraft);
+      color: var(--ink);
     }
 
     /* === VIDEO EMBED === */
@@ -604,6 +607,40 @@
       color: var(--fade);
     }
 
+    /* === CTA SECTION === */
+    .cta-section {
+      background: var(--ink);
+      border-top: 1px solid var(--border);
+    }
+    .cta-inner {
+      max-width: 640px;
+    }
+    .cta-section .section-label { color: rgba(255,255,255,0.45); }
+    .cta-section h2 {
+      color: white;
+      margin-bottom: 16px;
+    }
+    .cta-sub {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.75;
+      margin-bottom: 36px;
+      max-width: 52ch;
+    }
+    .cta-btn {
+      display: inline-block;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink);
+      background: var(--kraft);
+      padding: 14px 28px;
+      text-decoration: none;
+      transition: opacity 200ms ease;
+      cursor: pointer;
+    }
+    .cta-btn:hover { opacity: 0.88; }
+
     /* === FAQ === */
     .faq { border-top: 1px solid var(--border); }
     .faq h2 { margin-bottom: 48px; }
@@ -625,6 +662,8 @@
       align-items: center;
       user-select: none;
     }
+    .faq-question { transition: color 200ms ease; }
+    .faq-question:hover { color: var(--kraft); }
     .faq-question::-webkit-details-marker { display: none; }
     .faq-question::after {
       content: '+';
@@ -770,7 +809,7 @@
 
     /* Focus states */
     a:focus-visible, button:focus-visible, summary:focus-visible {
-      outline: 2px solid var(--kraft);
+      outline: 2px solid var(--ink);
       outline-offset: 3px;
     }
         </style>
@@ -1142,6 +1181,18 @@
       </div>
     </div>
 
+  </div>
+</section>
+
+<!-- ✦ CTA ✦ -->
+<section class="cta-section" id="contact">
+  <div class="container">
+    <div class="cta-inner">
+      <p class="section-label">Get Started</p>
+      <h2>Ready to find your <em class="brand-word">superpower</em>?</h2>
+      <p class="cta-sub">We take on 8–10 students per year. Start with a free, no-commitment intro call — it's the best way to see if we're a good fit.</p>
+      <a href="mailto:lisa@superpowercoaching.com" class="cta-btn">Book a Free Intro Call →</a>
+    </div>
   </div>
 </section>
 
