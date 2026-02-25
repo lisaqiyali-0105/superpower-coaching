@@ -183,11 +183,24 @@
       align-items: center;
     }
     .hero-photo-caption {
-      font-size: 0.78rem;
-      color: var(--fade);
       text-align: center;
-      margin-top: 12px;
-      letter-spacing: 0.02em;
+      margin-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .hero-caption-name {
+      font-family: var(--ff-display);
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--pencil);
+    }
+    .hero-caption-title {
+      font-family: var(--ff-body);
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--fade);
     }
     .hero-photo {
       width: 320px;
@@ -900,7 +913,10 @@
       <div class="hero-photo-placeholder" style="display:none;">
         Photo<br>Coming Soon
       </div>
-      <p class="hero-photo-caption">Founder &amp; Lead Coach, Superpower Coaching</p>
+      <div class="hero-photo-caption">
+        <span class="hero-caption-name">Lisa Qiya Li</span>
+        <span class="hero-caption-title">Founder &amp; Lead Coach, Superpower Coaching</span>
+      </div>
     </div>
   </section>
 
