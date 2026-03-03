@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Working With Lisa | Superpower Coaching</title>
+  <meta name="description" content="Your onboarding guide to working with Lisa — how we communicate, how to use Trello, version control, and what to expect from our sessions." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --paper: #FAFAF8;
+      --ink: #1A1A1A;
+      --pencil: #4A4A4A;
+      --fade: #6B6B6B;
+      --kraft: #C4A77D;
+      --kraft-pale: #F7F0E6;
+      --border: #D4CFC8;
+      --white: #FFFFFF;
+      --ff-display: 'Playfair Display', Georgia, serif;
+      --ff-body: 'Inter', system-ui, sans-serif;
+      --max-w: 780px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--ff-body);
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--pencil);
+      background-color: var(--paper);
+      min-height: 100vh;
+    }
+
+    /* Subtle paper texture */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    h1, h2, h3, h4 { font-family: var(--ff-display); color: var(--ink); line-height: 1.15; }
+    p { color: var(--pencil); line-height: 1.8; }
+    strong { color: var(--ink); font-weight: 600; }
+    a { color: var(--kraft); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 150ms; }
+    a:hover { border-bottom-color: var(--kraft); }
+
+    /* === NAV === */
+    .nav {
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 48px;
+      background: rgba(250, 250, 248, 0.96);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+    }
+    .nav-logo {
+      font-family: var(--ff-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--ink);
+      text-decoration: none;
+      border: none;
+      letter-spacing: 0.02em;
+    }
+    .nav-back {
+      font-size: 0.75rem;
+      color: var(--fade);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 200ms ease;
+      cursor: pointer;
+      border: none;
+    }
+    .nav-back:hover { color: var(--ink); border: none; }
+
+    /* === HERO === */
+    .page-hero {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 72px 48px 64px;
+      position: relative;
+    }
+
+    /* Editorial double-rule above hero */
+    .hero-rule {
+      border-top: 3px solid var(--ink);
+      padding-top: 6px;
+      border-bottom: 1px solid var(--ink);
+      height: 8px;
+      margin-bottom: 48px;
+    }
+
+    .hero-label {
+      font-family: var(--ff-body);
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--kraft);
+      font-weight: 600;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .page-hero h1 {
+      font-size: clamp(2.8rem, 6vw, 4.4rem);
+      font-weight: 900;
+      letter-spacing: -0.015em;
+      margin-bottom: 0;
+      line-height: 1.05;
+    }
+
+    .hero-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 28px 0;
+    }
+    .hero-divider::before,
+    .hero-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .hero-divider-gem {
+      font-size: 0.75rem;
+      color: var(--kraft);
+      line-height: 1;
+    }
+
+    .page-hero-sub {
+      font-size: 1.05rem;
+      color: var(--pencil);
+      line-height: 1.85;
+      max-width: 560px;
+    }
+
+    .brand-word { color: var(--kraft); font-style: italic; }
+
+    /* === GUIDE BODY === */
+    .guide-body {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 48px 100px;
+    }
+
+    /* === SECTION === */
+    .guide-section {
+      padding: 72px 0;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .guide-section:last-child { border-bottom: none; }
+
+    /* Editorial section header */
+    .section-header { margin-bottom: 32px; }
+
+    .section-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+
+    .section-num {
+      font-family: var(--ff-body);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--kraft);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .section-rule {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      font-weight: 700;
+      color: var(--ink);
+      margin: 0;
+    }
+
+    /* === PULL QUOTE === */
+    .pull-quote {
+      font-family: var(--ff-display);
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.65;
+      padding: 24px 0 24px 28px;
+      border-left: 3px solid var(--kraft);
+      margin: 32px 0;
+    }
+
+    /* === LISTS === */
+    .guide-section p + p { margin-top: 20px; }
+    .guide-section p + ul,
+    .guide-section p + ol { margin-top: 20px; }
+
+    ul.guide-list, ol.guide-list {
+      padding-left: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    ul.guide-list li, ol.guide-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 0.96rem;
+      line-height: 1.75;
+      color: var(--pencil);
+    }
+    ul.guide-list li::before {
+      content: '—';
+      color: var(--kraft);
+      flex-shrink: 0;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+    ol.guide-list { counter-reset: ol-counter; }
+    ol.guide-list li::before {
+      counter-increment: ol-counter;
+      content: counter(ol-counter) '.';
+      color: var(--kraft);
+      font-weight: 700;
+      font-family: var(--ff-body);
+      font-size: 0.96rem;
+      line-height: 1.75;
+      flex-shrink: 0;
+      min-width: 20px;
+    }
+
+    /* === CALLOUT === */
+    .callout {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--kraft);
+      padding: 22px 28px;
+      margin-top: 24px;
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--pencil);
+    }
+    .callout strong { color: var(--ink); }
+    .callout + .callout { margin-top: 12px; }
+
+    /* Key rule callout — ink block with decorative quote */
+    .callout-rule {
+      background: var(--ink);
+      color: rgba(255,255,255,0.82);
+      border: none;
+      padding: 36px 36px 36px 44px;
+      margin-top: 28px;
+      font-size: 0.97rem;
+      line-height: 1.85;
+      position: relative;
+    }
+    .callout-rule::before {
+      content: '"';
+      font-family: var(--ff-display);
+      font-size: 6rem;
+      color: var(--kraft);
+      opacity: 0.22;
+      position: absolute;
+      top: -8px;
+      left: 20px;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .callout-rule strong { color: var(--kraft); font-weight: 600; }
+
+    /* === BELIEF GRID (Philosophy) === */
+    .belief-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .belief-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 28px 24px 24px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 250ms ease, box-shadow 250ms ease;
+    }
+    .belief-card:hover {
+      border-color: var(--kraft);
+      box-shadow: 0 4px 20px rgba(196, 167, 125, 0.1);
+    }
+    .belief-card-num {
+      font-family: var(--ff-display);
+      font-size: 3.5rem;
+      font-weight: 900;
+      font-style: italic;
+      color: var(--kraft);
+      opacity: 0.12;
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .belief-card strong {
+      display: block;
+      font-family: var(--ff-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 10px;
+      line-height: 1.3;
+      position: relative;
+    }
+    .belief-card p {
+      font-size: 0.9rem;
+      color: var(--pencil);
+      line-height: 1.72;
+      position: relative;
+    }
+
+    /* === VERSION CONTROL TABLE === */
+    .version-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 24px;
+      font-size: 0.9rem;
+    }
+    .version-table th {
+      text-align: left;
+      font-family: var(--ff-body);
+      font-size: 0.63rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--fade);
+      padding: 0 16px 14px 0;
+      border-bottom: 2px solid var(--ink);
+      font-weight: 600;
+    }
+    .version-table td {
+      padding: 14px 16px 14px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--pencil);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+    .version-table tr:last-child td { border-bottom: none; }
+    .version-table tr:hover td { background: rgba(196, 167, 125, 0.035); }
+    .version-table .mono {
+      font-family: 'Courier New', monospace;
+      font-size: 0.83rem;
+      color: var(--ink);
+      background: #F0EDE8;
+      padding: 3px 7px;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+    .version-table .who {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--fade);
+    }
+    .version-table .who.lisa { color: var(--kraft); }
+
+    /* === CLOSING === */
+    .closing {
+      margin-top: 60px;
+      padding: 80px 48px;
+      background: linear-gradient(135deg, #FDF8F2 0%, #F5E9D6 100%);
+      border-top: 2px solid var(--kraft);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Ghost watermark */
+    .closing::before {
+      content: '加油';
+      position: absolute;
+      font-family: var(--ff-display);
+      font-size: 22rem;
+      font-weight: 900;
+      color: var(--kraft);
+      opacity: 0.055;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      white-space: nowrap;
+      line-height: 1;
+    }
+    .closing .jia-you {
+      font-family: var(--ff-display);
+      font-size: clamp(3rem, 6vw, 4.5rem);
+      font-style: italic;
+      font-weight: 700;
+      color: var(--kraft);
+      display: block;
+      letter-spacing: 0.04em;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* === FOOTER === */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 48px;
+      background: var(--paper);
+      text-align: center;
+    }
+    .footer-copy { font-size: 0.7rem; color: var(--fade); letter-spacing: 0.06em; }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 640px) {
+      .nav { padding: 16px 24px; }
+      .page-hero { padding: 48px 24px 48px; }
+      .guide-body { padding: 0 24px 60px; }
+      .closing { padding: 56px 24px; }
+      .footer { padding: 28px 24px; }
+      .version-table { display: block; overflow-x: auto; }
+      .belief-grid { grid-template-columns: 1fr; }
+      .closing::before { font-size: 10rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✦ NAV ✦ -->
+  <nav class="nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">Superpower Coaching</a>
+    <a href="index.html" class="nav-back">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      Back to main site
+    </a>
+  </nav>
+
+  <!-- ✦ HERO ✦ -->
+  <div class="page-hero">
+    <div class="hero-rule"></div>
+    <span class="hero-label">New Client Guide</span>
+    <h1>Working with <em class="brand-word">Lisa</em>.</h1>
+    <div class="hero-divider">
+      <span class="hero-divider-gem">✦</span>
+    </div>
+    <p class="page-hero-sub">A quick guide to getting the most out of our coaching together — how I communicate, how to use our Trello board, and what to expect from our sessions.</p>
+  </div>
+
+  <!-- ✦ GUIDE BODY ✦ -->
+  <div class="guide-body">
+
+    <!-- 1. AVAILABILITY -->
+    <div class="guide-section">
+      <div class="section-header">
+        <div class="section-eyebrow">
+          <span class="section-num">01 — Availability</span>
+          <span class="section-rule"></span>
+        </div>
+        <h2>When to Reach Me</h2>
+      </div>
+      <p><strong>I'm available Monday through Saturday, 6&thinsp;am–8&thinsp;pm PT</strong> (Beijing time: Monday–Saturday, 9&thinsp;pm–11&thinsp;am the following morning).</p>
+      <p>Sundays are off-limits — I protect that day for myself, and I hope you'll protect your rest days too. Outside of that window, I'm genuinely reachable. The best way to surface something for my attention is to tag me on Trello — more on that in a moment.</p>
+    </div>
+
+    <!-- 2. COMMUNICATION STYLE -->
+    <div class="guide-section">
+      <div class="section-header">
+        <div class="section-eyebrow">
+          <span class="section-num">02 — Communication</span>
+          <span class="section-rule"></span>
+        </div>
+        <h2>How I Communicate</h2>
+      </div>
+      <p><strong>I will be direct with you.</strong> When your essay isn't working, I'll tell you plainly — not to be harsh, but because vague feedback wastes your time. Honesty is how I show respect.</p>
+      <p><strong>And I am genuinely rooting for you.</strong> My directness comes from care, not criticism. Please always assume positive intent — if something I say lands oddly, just tell me. I want to get it right.</p>
+
+      <div class="pull-quote">
+        I may throw several ideas at you at once — frameworks, story angles, essay approaches, school list thoughts all at the same time. This is me trusting your ability to hold a lot of ideas.
+      </div>
+
+      <p>If I'm moving too fast, just say: <em>"Can we slow down?"</em> I'll follow your lead.</p>
+    </div>
+
+    <!-- 3. TRELLO -->
+    <div class="guide-section">
+      <div class="section-header">
+        <div class="section-eyebrow">
+          <span class="section-num">03 — Trello</span>
+          <span class="section-rule"></span>
+        </div>
+        <h2>How to Use Trello</h2>
+      </div>
+      <p>Your Trello board is the home base for everything — drafts, exercises, timelines, school research. But there's one habit that makes the whole system work:</p>
+
+      <div class="callout-rule">
+        <strong>Tag me with @ on every card where you want my eyes.</strong><br>
+        I check Trello regularly, but I'm not scrolling every card — I'm watching for mentions. If you upload something without tagging me, I may genuinely miss it. That's not me ignoring you; it's just how Trello works. The @ sign is how we make sure nothing falls through the cracks.
+      </div>
+
+      <p style="margin-top: 24px;">In practice, that looks like this:</p>
+      <ul class="guide-list">
+        <li>Upload a new essay draft → leave a comment tagging @lisaqiyali with the version number and what you'd like feedback on</li>
+        <li>Have a question between sessions → open a card, write your question, @ mention me</li>
+        <li>Finish an exercise like the Superpower Exercise → leave a comment tagging me so I know it's ready to review</li>
+      </ul>
+      <p style="margin-top: 20px;">I will always respond.</p>
+    </div>
+
+    <!-- 4. VERSION CONTROL -->
+    <div class="guide-section">
+      <div class="section-header">
+        <div class="section-eyebrow">
+          <span class="section-num">04 — Files</span>
+          <span class="section-rule"></span>
+        </div>
+        <h2>Version Control</h2>
+      </div>
+      <p>I am very particular about this. We will go through many rounds of revision on each document — sometimes 5, 6, or 8 versions. Without a clear naming system, files get lost, the wrong version gets submitted, or we spend half a session figuring out which draft we're looking at. Follow this convention from Day&nbsp;1:</p>
+
+      <div class="callout" style="margin-top: 24px; margin-bottom: 28px;">
+        <strong>Naming format:</strong> <span style="font-family: 'Courier New', monospace; font-size: 0.88rem; background: #F0EDE8; padding: 2px 6px;">[YourName]_[DocumentType]_v[number].docx</span>
+      </div>
+
+      <table class="version-table" aria-label="Version control examples">
+        <thead>
+          <tr>
+            <th>Filename</th>
+            <th>Who</th>
+            <th>What it means</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="mono">WangFang_Resume_v1.docx</span></td>
+            <td><span class="who">You</span></td>
+            <td>Your first draft</td>
+          </tr>
+          <tr>
+            <td><span class="mono">WangFang_Resume_v1 (LL).docx</span></td>
+            <td><span class="who lisa">Lisa</span></td>
+            <td>Lisa's edited version of your v1</td>
+          </tr>
+          <tr>
+            <td><span class="mono">WangFang_Resume_v2.docx</span></td>
+            <td><span class="who">You</span></td>
+            <td>Your revision incorporating Lisa's feedback</td>
+          </tr>
+          <tr>
+            <td><span class="mono">WangFang_Resume_v2 (LL).docx</span></td>
+            <td><span class="who lisa">Lisa</span></td>
+            <td>Lisa's edits on v2</td>
+          </tr>
+          <tr>
+            <td><span class="mono">WangFang_Goals_Essay_HBS_v1.docx</span></td>
+            <td><span class="who">You</span></td>
+            <td>Your first draft of the HBS goals essay</td>
+          </tr>
+          <tr>
+            <td><span class="mono">WangFang_Goals_Essay_HBS_v1 (LL).docx</span></td>
+            <td><span class="who lisa">Lisa</span></td>
+            <td>Lisa's edits on that draft</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top: 28px;">The logic is simple: <strong>you increment the number</strong> (v1, v2, v3…). <strong>I append (LL)</strong> to whatever version you sent me. We can both see at a glance who last touched the file and where we are in the process.</p>
+
+      <ul class="guide-list" style="margin-top: 20px;">
+        <li>Never save over a previous version — always create a new numbered file</li>
+        <li>Upload every new version as a Trello attachment and @ mention me</li>
+      </ul>
+    </div>
+
+    <!-- 5. COACHING PHILOSOPHY -->
+    <div class="guide-section">
+      <div class="section-header">
+        <div class="section-eyebrow">
+          <span class="section-num">05 — Philosophy</span>
+          <span class="section-rule"></span>
+        </div>
+        <h2>My Coaching Philosophy</h2>
+      </div>
+      <p>This process is about uncovering who you already are — not constructing a version of you that sounds impressive. The best MBA applications don't read like resumes in essay form. They read like a person you'd want to be stuck in an airport with for three hours.</p>
+
+      <div class="belief-grid">
+        <div class="belief-card">
+          <span class="belief-card-num">I</span>
+          <strong>Your superpower is real.</strong>
+          <p>It's the thing people always come to you for — that feels almost too easy to you. We'll find it. Everything flows from there.</p>
+        </div>
+        <div class="belief-card">
+          <span class="belief-card-num">II</span>
+          <strong>Action before motivation.</strong>
+          <p>Don't wait until you feel ready to write. Write badly first. The feeling of momentum comes from starting, not the other way around.</p>
+        </div>
+        <div class="belief-card">
+          <span class="belief-card-num">III</span>
+          <strong>Stories beat statements.</strong>
+          <p>"I am a leader" is a claim. "Here's what happened in that room" is a story. Stories win.</p>
+        </div>
+        <div class="belief-card">
+          <span class="belief-card-num">IV</span>
+          <strong>Leadership doesn't require a title.</strong>
+          <p>Some of your best stories might be the quiet ones — the meeting where you named the tension no one else would, the colleague you invested in. Don't dismiss them.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. SESSIONS -->
+    <div class="guide-section">
+      <div class="section-header">
+        <div class="section-eyebrow">
+          <span class="section-num">06 — Sessions</span>
+          <span class="section-rule"></span>
+        </div>
+        <h2>How Our Sessions Work</h2>
+      </div>
+      <p><strong>Come prepared.</strong> Share any new drafts, exercises, or thinking at least 24 hours before our call by uploading to Trello and tagging me. This lets me actually read your work in advance — which means we spend the session going deep, not me reading out loud while you watch.</p>
+      <p><strong>Leave with one clear next step.</strong> Every session should end with a specific action you're taking before we talk next. If you leave a session unsure what to do, tell me — I'll fix that before we hang up.</p>
+      <p><strong>We aim for at least one Zoom call per week</strong> — typically an hour to an hour and a half, and I'll add time when we need it. My goal is to make sure you walk away with real clarity, not to watch the clock. And Zoom isn't the only way to reach me — drop a question on WeChat anytime; I will always respond (as long as I'm awake). Voice notes are great too. For anything that can wait, leave it in Trello and we'll work through it asynchronously.</p>
+    </div>
+
+    <!-- 7. WHEN STUCK -->
+    <div class="guide-section">
+      <div class="section-header">
+        <div class="section-eyebrow">
+          <span class="section-num">07 — Getting Unstuck</span>
+          <span class="section-rule"></span>
+        </div>
+        <h2>When You're Stuck</h2>
+      </div>
+      <p>Staring at a blank page is one of the hardest parts of this process. It will happen. Here's what actually helps:</p>
+
+      <ol class="guide-list" style="margin-top: 20px;">
+        <li><span><strong>Step away from the page.</strong> Take a walk. Clear your mind. You'd be surprised how much your brain keeps working when you stop forcing it.</span></li>
+        <li><span><strong>Talk instead of write.</strong> Use dictation software — I love Wispr Flow, and there are other great options. When you talk out loud, your voice emerges naturally. You start to understand who you are by describing yourself out loud. Things come out that would never come out on a keyboard.</span></li>
+        <li><span><strong>Remember: writing is the last step.</strong> This process is really one of self-exploration. Thinking comes first. Talking comes second. Writing is just capturing what's already there. If you're stuck, you probably haven't done enough thinking yet — and that's okay.</span></li>
+      </ol>
+
+      <div class="pull-quote">
+        Don't optimize the draft that doesn't exist yet.
+      </div>
+    </div>
+
+    <!-- CLOSING -->
+    <div class="closing">
+      <span class="jia-you">加油！</span>
+    </div>
+
+  </div>
+
+  <!-- ✦ FOOTER ✦ -->
+  <footer class="footer">
+    <p class="footer-copy">&copy; 2026 Superpower Coaching. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
