@@ -873,6 +873,64 @@
       margin: 0;
     }
 
+    /* === COLLABORATION SECTION === */
+    .collab {
+      background: var(--kraft-pale);
+    }
+    .collab .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .collab-intro {
+      font-size: 1.05rem;
+      color: var(--pencil);
+      line-height: 1.7;
+      margin-bottom: 40px;
+      max-width: 620px;
+    }
+    .collab-board-wrap {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(26,26,26,0.12), 0 2px 8px rgba(26,26,26,0.06);
+      border: 1px solid var(--border);
+      margin-bottom: 40px;
+    }
+    .collab-board-wrap img {
+      width: 100%;
+      display: block;
+    }
+    .collab-pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .collab-pillar {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px 20px;
+    }
+    .collab-pillar strong {
+      display: block;
+      font-family: var(--ff-body);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--kraft);
+      margin-bottom: 8px;
+    }
+    .collab-pillar p {
+      font-size: 0.9rem;
+      color: var(--pencil);
+      line-height: 1.6;
+      margin: 0;
+    }
+    @media (max-width: 640px) {
+      .collab-pillars { grid-template-columns: 1fr; }
+    }
+
     /* === MOBILE === */
     /* === TABLET (641–900px) === */
     @media (min-width: 641px) and (max-width: 900px) {
@@ -1303,6 +1361,37 @@
     </div>
   </div>
 </section>
+
+<hr class="section-divider">
+
+<section class="collab" id="collaboration">
+  <div class="container">
+    <p class="section-label">How We Work Together</p>
+    <h2>Your Dedicated Workspace, Start to Finish</h2>
+    <p class="collab-intro">Every client gets their own private Trello board — a shared workspace I build and manage entirely on your behalf. From your first coaching call through your final submission, everything lives in one place: session notes, essay drafts, school research, deadlines, recommender briefings, and more. You always know exactly where we are and what's coming next.</p>
+
+    <div class="collab-board-wrap">
+      <img src="trello-board.png" alt="Client Trello workspace showing organized boards for coaching calls, career vision, extracurriculars, and story bank" loading="lazy">
+    </div>
+
+    <div class="collab-pillars">
+      <div class="collab-pillar">
+        <strong>I set it up for you</strong>
+        <p>You don't lift a finger to get started. I build your board before our first call so we can hit the ground running from day one.</p>
+      </div>
+      <div class="collab-pillar">
+        <strong>Everything in one place</strong>
+        <p>Essays, research, call notes, deadlines — no digging through email threads or lost documents. One board, total clarity.</p>
+      </div>
+      <div class="collab-pillar">
+        <strong>Always know what's next</strong>
+        <p>Each stage is mapped out. You can see exactly where you are in the process and what's coming — no guesswork, no surprises.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
 
 <section class="testimonials" id="testimonials">
   <div class="container">
