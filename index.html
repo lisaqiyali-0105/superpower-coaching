@@ -667,6 +667,23 @@
       color: var(--fade);
     }
 
+    /* === VIDEO GALLERY === */
+    .video-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+    .video-item {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .video-item .video-caption {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
     /* === CTA SECTION === */
     .cta-section {
       background: var(--ink);
@@ -940,6 +957,7 @@
       .diff-grid { grid-template-columns: repeat(2, 1fr); }
       .myth-grid { grid-template-columns: 1fr; }
       .testi-grid { grid-template-columns: 1fr; }
+      .video-gallery { grid-template-columns: 1fr; }
       .stats-strip { grid-template-columns: repeat(2, 1fr); }
       .timeline { padding-left: 40px; }
     }
@@ -996,6 +1014,7 @@
 
       /* Testimonials */
       .testi-grid { grid-template-columns: 1fr; }
+      .video-gallery { grid-template-columns: 1fr; gap: 28px; }
       .testi-card:nth-child(odd),
       .testi-card:nth-child(even) { transform: none; }
 
@@ -1055,7 +1074,7 @@
       <li><a href="#who">Who Gets In</a></li>
       <li><a href="#process">Why Us</a></li>
       <li><a href="#roadmap">Process</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#testimonials">Wall of Love</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
   </nav>
@@ -1395,7 +1414,7 @@
 <section class="testimonials" id="testimonials">
   <div class="container">
     <p class="section-label">What They Say</p>
-    <h2>Results, In Their Words</h2>
+    <h2>Wall of Love</h2>
 
     <div class="testi-grid">
 
@@ -1473,14 +1492,41 @@
 
     <!-- ✦ testimonial videos embed here ✦ -->
     <div class="video-embed">
-      <p class="video-embed-label">Client Testimonial</p>
-      <div class="video-wrap">
-        <iframe
-          src="https://www.youtube.com/embed/UQ1_fAp-qAQ?rel=0"
-          title="Superpower Coaching client testimonial"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+      <p class="video-embed-label">In Their Own Words</p>
+      <div class="video-gallery">
+
+        <div class="video-item">
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/N-CNgzvnAhc?rel=0"
+              title="Edward C. — HBS 2+2 and Stanford GSB dual admit testimonial"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="video-caption">
+            <div class="testi-name">Edward C.</div>
+            <div class="testi-admits">HBS 2+2 · Stanford GSB admit</div>
+          </div>
+        </div>
+
+        <div class="video-item">
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/UQ1_fAp-qAQ?rel=0"
+              title="Yilin Xie — HBS admit testimonial"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="video-caption">
+            <div class="testi-name">Yilin Xie</div>
+            <div class="testi-admits">HBS · Yale SOM admit</div>
+          </div>
+        </div>
+
       </div>
     </div>
 
