@@ -35,7 +35,7 @@
     }
 
     /* === BASE === */
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
     body {
       font-family: var(--ff-body);
       font-size: 16px;
@@ -638,7 +638,7 @@
 
     /* === VIDEO EMBED === */
     .video-embed {
-      margin-top: 56px;
+      margin-bottom: 56px;
     }
     .video-embed-label {
       font-size: 0.72rem;
@@ -971,6 +971,7 @@
       .stat-n { font-size: 2.2rem; }
 
       /* Nav */
+      html { scroll-padding-top: 158px; }
       .nav { padding: 16px 24px; flex-direction: column; gap: 12px; }
       .nav-links { gap: 14px; justify-content: center; flex-wrap: wrap; }
       .nav-links a { font-size: 0.7rem; }
@@ -1416,6 +1417,46 @@
     <p class="section-label">What They Say</p>
     <h2>Wall of Love</h2>
 
+    <!-- ✦ testimonial videos embed here ✦ -->
+    <div class="video-embed">
+      <p class="video-embed-label">In Their Own Words</p>
+      <div class="video-gallery">
+
+        <div class="video-item">
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/N-CNgzvnAhc?rel=0"
+              title="Edward Chen — HBS 2+2 and Stanford GSB dual admit testimonial"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="video-caption">
+            <div class="testi-name">Edward Chen</div>
+            <div class="testi-admits">HBS 2+2 · Stanford GSB admit</div>
+          </div>
+        </div>
+
+        <div class="video-item">
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/UQ1_fAp-qAQ?rel=0"
+              title="Yilin Xie — HBS admit testimonial"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="video-caption">
+            <div class="testi-name">Yilin Xie</div>
+            <div class="testi-admits">HBS · Yale SOM admit</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
     <div class="testi-grid">
 
       <div class="testi-card">
@@ -1489,46 +1530,6 @@
     </div>
 
     <!-- ✦ add new testimonial here ✦ -->
-
-    <!-- ✦ testimonial videos embed here ✦ -->
-    <div class="video-embed">
-      <p class="video-embed-label">In Their Own Words</p>
-      <div class="video-gallery">
-
-        <div class="video-item">
-          <div class="video-wrap">
-            <iframe
-              src="https://www.youtube.com/embed/N-CNgzvnAhc?rel=0"
-              title="Edward C. — HBS 2+2 and Stanford GSB dual admit testimonial"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          </div>
-          <div class="video-caption">
-            <div class="testi-name">Edward C.</div>
-            <div class="testi-admits">HBS 2+2 · Stanford GSB admit</div>
-          </div>
-        </div>
-
-        <div class="video-item">
-          <div class="video-wrap">
-            <iframe
-              src="https://www.youtube.com/embed/UQ1_fAp-qAQ?rel=0"
-              title="Yilin Xie — HBS admit testimonial"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          </div>
-          <div class="video-caption">
-            <div class="testi-name">Yilin Xie</div>
-            <div class="testi-admits">HBS · Yale SOM admit</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
 
   </div>
 </section>
